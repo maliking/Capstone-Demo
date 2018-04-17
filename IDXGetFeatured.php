@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'keys/cred.php';
+// require 'keys/cred.php';
 require 'twilio-php-master/Twilio/autoload.php';
 use Twilio\Rest\Client;
 
@@ -102,8 +102,8 @@ for ($i = 0; $i < sizeof($keys); $i++) {
             $houseBaths = $response[$keys[$i]]['totalBaths'];
         }
 
-        $getLeadsDb = "SELECT BuyerInfo.*, UsersInfo.firstName as agentFirstName, UsersInfo.lastName as agentLastName FROM BuyerInfo 
-        LEFT JOIN UsersInfo ON UsersInfo.userId = BuyerInfo.userId 
+        $getLeadsDb = "SELECT BuyerInfo.*, UsersInfo.firstName as agentFirstName, UsersInfo.lastName as agentLastName FROM BuyerInfo
+        LEFT JOIN UsersInfo ON UsersInfo.userId = BuyerInfo.userId
         WHERE BuyerInfo.priceMax BETWEEN :lessPrice AND :morePrice AND BuyerInfo.bedroomsMin <= :moreBedrooms AND BuyerInfo.bathroomsMin <= :moreBathrooms
         ORDER BY BuyerInfo.priceMax DESC LIMIT 10";
 
