@@ -136,19 +136,19 @@ for ($i = 0; $i < sizeof($keys); $i++) {
         $agentStmt->execute($agentParam);
         $agentPhoneResult = $agentStmt->fetch();
 
-        if($leadCount > 1)
-        {
-
-            $twilio_phone_number = "+18315851661";
-            $client = new Client($sid, $token);
-            $client->messages->create(
-                $agentPhoneResult['phone'],
-                array(
-                    "From" => $twilio_phone_number,
-                    "Body" => $message,
-                )
-            );
-        }
+        // if($leadCount > 1)
+        // {
+        //
+        //     $twilio_phone_number = "+18315851661";
+        //     $client = new Client($sid, $token);
+        //     $client->messages->create(
+        //         $agentPhoneResult['phone'],
+        //         array(
+        //             "From" => $twilio_phone_number,
+        //             "Body" => $message,
+        //         )
+        //     );
+        // }
 
     }
 }
