@@ -1,8 +1,11 @@
 <?php
 session_start();
+
+//COMMENTED OUT TO GET WORKING
 // require 'keys/cred.php';
 // require 'twilio-php-master/Twilio/autoload.php';
 // use Twilio\Rest\Client;
+//DONE COMMENTING
 
 require 'databaseConnection.php';
 $dbConn = getConnection();
@@ -136,6 +139,7 @@ for ($i = 0; $i < sizeof($keys); $i++) {
         $agentStmt->execute($agentParam);
         $agentPhoneResult = $agentStmt->fetch();
 
+        //COMMENTED OUT TO GET WORKING
         // if($leadCount > 1)
         // {
         //
