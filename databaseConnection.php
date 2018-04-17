@@ -4,7 +4,7 @@ function getConnection()
     //database login credentials
     $host = "localhost";
     $dbname = "test";
-    $username = "markiepe_testusr";
+    $username = "testusr";
     $password = "root123";
 
     try {
