@@ -86,7 +86,7 @@ $_SESSION['license'] = $licenseResult['license'];
                                                       else
                                                           echo "\"../dist/img/user2-160x160.jpg\""; ?> class="user-image"
                                                alt="User Profile Picture">
-                                               <span class="hidden-xs"><?php echo $agentInfo['firstName'] . " " . $agentInfo['lastName']?></span> </a>
+                                               <!-- <span class="hidden-xs"><?php echo $agentInfo['firstName'] . " " . $agentInfo['lastName']?></span> </a> -->
 
                 <ul class="nav nav-pills nav-stacked admin-menu" >
                     <li class="active"><a href="" data-target-id="profile"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
@@ -104,7 +104,8 @@ $_SESSION['license'] = $licenseResult['license'];
                         <h3 class="panel-title">Name</h3>
                     </div>
                     <div class="panel-body">
-                        <?php echo $licenseResult['firstName'] . " " . $licenseResult['lastName']; ?>
+                        <//?php echo $licenseResult['firstName'] . " " . $licenseResult['lastName']; ?>
+                        <?php echo $agentInfo['firstName'] . " " . $agentInfo['lastName']?>
                     </div>
                 </div>
                 <div class="panel panel-primary" style="margin: 1em;">
@@ -112,7 +113,9 @@ $_SESSION['license'] = $licenseResult['license'];
                         <h3 class="panel-title">Email</h3>
                     </div>
                     <div class="panel-body">
-                        <?php echo $licenseResult['email']; ?>
+                        <//?php echo $licenseResult['email']; ?>
+                        <?php echo $agentInfo['email']; ?>
+
                     </div>
                 </div>
                 <div class="panel panel-primary" style="margin: 1em;">
