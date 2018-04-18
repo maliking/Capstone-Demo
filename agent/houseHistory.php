@@ -3,7 +3,7 @@ session_start();
 clearstatcache();
 date_default_timezone_set('America/Los_Angeles');
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 require '../databaseConnection.php';
 $dbConn = getConnection();
@@ -71,17 +71,17 @@ $historyResults = $historyStmt->fetchAll();
                 font-size: 150%;
                 font-weight: bold;
             }
-            
+
             #modal-table {
                 color: black;
             }
-            
+
             .btn-group {
                 display: inline-block!important
             }
 
         </style>
-        
+
     </head>
 
     <body class="hold-transition skin-red-light sidebar-mini">
@@ -104,7 +104,7 @@ $historyResults = $historyStmt->fetchAll();
             <div class="content-wrapper">
                 <!-- Main content -->
                 <section class="content" style="min-height:initial;">
-                  
+
 
 
 
@@ -118,7 +118,7 @@ $historyResults = $historyStmt->fetchAll();
                     <div class="row">
                         <!-- /.col -->
                         <div class="col-md-12">
-                            
+
                             <div class="box box-success">
                                 <div class="box-header">
                                     <h4>House History</h4>
@@ -140,20 +140,20 @@ $historyResults = $historyStmt->fetchAll();
 
                                             <?php
 
-                                            foreach ($historyResults as $history) 
+                                            foreach ($historyResults as $history)
                                             {
                                                 echo "<tr>";
-                                                echo "<td>" . $history['address'] . "</td>"; 
-                                                echo "<td>" . $history['city'] . "</td>"; 
-                                                echo "<td>" . $history['state'] . "</td>"; 
-                                                echo "<td>" . $history['zip'] . "</td>"; 
-                                                echo "<td>$" . number_format($history['finalHousePrice']) . "</td>"; 
-                                                echo "<td>$" . number_format($history['finalComm']) . "</td>"; 
-                                                echo "<td>" . date("m-d-Y", strtotime($history['settlementDate'])) . "</td>"; 
+                                                echo "<td>" . $history['address'] . "</td>";
+                                                echo "<td>" . $history['city'] . "</td>";
+                                                echo "<td>" . $history['state'] . "</td>";
+                                                echo "<td>" . $history['zip'] . "</td>";
+                                                echo "<td>$" . number_format($history['finalHousePrice']) . "</td>";
+                                                echo "<td>$" . number_format($history['finalComm']) . "</td>";
+                                                echo "<td>" . date("m-d-Y", strtotime($history['settlementDate'])) . "</td>";
                                                 echo "</tr>";
                                             }
-                                     
-                                    
+
+
                                             ?>
 
                                         </tbody>
@@ -161,9 +161,9 @@ $historyResults = $historyStmt->fetchAll();
                                 </div> <!-- /.box-body -->
                             </div> <!-- /.box -->
 
-                           
 
-                           
+
+
                             <!-- /. box -->
                         </div>
                         <!-- /.col -->
@@ -208,10 +208,10 @@ $historyResults = $historyStmt->fetchAll();
         <script src="../plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
         <script>
-        
+
             //Date picker
             $('#datepicker').datepicker();
-           
+
             jQuery(function($){
                 $('.footable').footable({
                     "paging": {
@@ -399,7 +399,7 @@ $historyResults = $historyStmt->fetchAll();
                 });
 
             });
-        
+
         function takeTransNote(transId)
         {
             var prevNote = $("#" + transId).html();
@@ -412,7 +412,7 @@ $historyResults = $historyStmt->fetchAll();
                     transId: transId,
                     note: noteEntered
                 });
-                
+
             }
 
         }
@@ -430,7 +430,7 @@ $historyResults = $historyStmt->fetchAll();
             //     }
             // }, 60000); // Repeat every 60000 milliseconds (1 minute)
 
-            
+
             function saveNameMisc(transId,type,name)
             {
                 // alert(name.value);
@@ -452,7 +452,7 @@ $historyResults = $historyStmt->fetchAll();
             function saveCompDate(transId,type,date)
             {
 
-                
+
                 var sendDate = date.value;
                 if( type == "recieved")
                 {
@@ -506,32 +506,32 @@ $historyResults = $historyStmt->fetchAll();
                 // updateStatus(transId, type date);
                 $.post( "../staff/saveCompDates.php", { transId: transId, type:type, date:sendDate });
 
-                
+
 
             }
              function saveDateCalendar(transId,type,date)
              {
-          
+
                 var aprvDay = $("#aprvDay"+transId).val();
                 $("#aprvDay" + transId).val(date.value);
                 updateStatus(transId,type,date);
                 $.post( "../staff/saveNewDates.php", { transId: transId, type:type, date:date.value, aprvDay: aprvDay });
-                
+
             }
-            
+
             function saveDaysNum(transId,type,date)
              {
-           
+
                 $.post( "../staff/saveNewDaysNum.php", { transId: transId, type:type, date:date.value });
                 updateStatus(transId,date);
-                  
+
             }
 
             function saveNewDates(transId)
             {
 
                 $("#editDateModal"+transId).modal("toggle");
-                
+
 
                 alert( "Dates Saved" );
                 location.reload();
@@ -553,18 +553,18 @@ $historyResults = $historyStmt->fetchAll();
                   });
 
 
-                
+
             }
 
             function updateStatus(transId, type, date)
             {
                 var aprvDay = $("#aprvDay"+transId).val();
                 // alert(aprvDay);
-                var newDate = moment(date.value).format("YYYY-MM-DD"); 
-                var todayDate = moment().format("YYYY-MM-DD"); 
+                var newDate = moment(date.value).format("YYYY-MM-DD");
+                var todayDate = moment().format("YYYY-MM-DD");
                 var inThreeDays = moment(todayDate).add(3, 'days').format("YYYY-MM-DD");
-               
-                
+
+
                 if(moment(newDate).isSameOrBefore(inThreeDays) && moment(newDate).isSameOrAfter(todayDate))
                 {
                     $("#status" + transId + type).attr('class', 'fa fa-warning');
@@ -573,7 +573,7 @@ $historyResults = $historyStmt->fetchAll();
                 }
                 else if(moment(newDate).isSameOrAfter(todayDate))
                 {
-                    
+
                     $("#status" + transId + type).attr('class', '');
                     // $("#status" + transId + type).css('color', "#5cb85c");
                     // alert("late");

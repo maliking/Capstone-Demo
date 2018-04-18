@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 require '../databaseConnection.php';
 $dbConn = getConnection();
@@ -66,7 +66,7 @@ $mlsId = $_GET['id'];
                 font-size: 150%;
                 font-weight: bold;
             }
-            
+
             #modal-table {
                 color: black;
             }
@@ -128,25 +128,25 @@ $mlsId = $_GET['id'];
 
                                 //     if($response[$keys[$i]]['listingID'] == $mlsId)
                                 //     {
-                                //         for ($j = 0; $j < $response[$keys[$i]]['mlsPhotoCount']; $j++) 
+                                //         for ($j = 0; $j < $response[$keys[$i]]['mlsPhotoCount']; $j++)
                                 //         {
                                 //             if($j % 6 == 0 )
                                 //                 echo '</tr><tr>';
                                 //             echo '<td><a href="' . $response[$keys[$i]]['image'][$j]['url'] .'" data-lightbox="image' . $j . '"><img src="' . $response[$keys[$i]]['image'][$j]['url'] .'" style="width:150px;height:150px;" ></a></td>';
-                                            
+
                                 //         }
                                 //         break;
 
                                 //     }
 
-                                    
+
                                 // }
                                 ?>
-                                
+
                                 <div class="w3-container" style=" width:75%; height:700px">
                                     <div>
                                         <?php
-                                        for ($i = 0; $i < sizeof($keys); $i++) 
+                                        for ($i = 0; $i < sizeof($keys); $i++)
                                         {
                                             if($response[$keys[$i]]['listingID'] == $mlsId)
                                             {
@@ -155,18 +155,18 @@ $mlsId = $_GET['id'];
                                                 . "." . $response[$keys[$i]]['partialBaths'] . "&nbsp&nbsp SqFt: " . $response[$keys[$i]]['sqFt'] . "&nbsp&nbsp Price: " . $response[$keys[$i]]['listingPrice'];
                                                 break;
                                             }
-                                                
+
                                         }
                                         ?>
                                     </div>
                                 <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)" style="position:sticky;">&#10094;</button>
                                 <button class="w3-button w3-display-right w3-black" onclick="plusDivs(+1)" style="position:sticky; left:100%;">&#10095;</button>
                                     <?php
-                                        for ($i = 0; $i < sizeof($keys); $i++) 
+                                        for ($i = 0; $i < sizeof($keys); $i++)
                                         {
                                             if($response[$keys[$i]]['listingID'] == $mlsId)
                                             {
-                                                for ($j = 0; $j < $response[$keys[$i]]['mlsPhotoCount']; $j++) 
+                                                for ($j = 0; $j < $response[$keys[$i]]['mlsPhotoCount']; $j++)
                                                 {
                                                     echo '<img class="mySlides" src="' . $response[$keys[$i]]['image'][$j]['url']  . '" style="width:100%; height: 500px">';
                                                 }
@@ -181,11 +181,11 @@ $mlsId = $_GET['id'];
                                   <div class="w3-section" style="overflow:auto; height: 200px;">
 
                                     <?php
-                                    for ($i = 0; $i < sizeof($keys); $i++) 
+                                    for ($i = 0; $i < sizeof($keys); $i++)
                                         {
                                             if($response[$keys[$i]]['listingID'] == $mlsId)
                                             {
-                                                for ($j = 0; $j < $response[$keys[$i]]['mlsPhotoCount']; $j++) 
+                                                for ($j = 0; $j < $response[$keys[$i]]['mlsPhotoCount']; $j++)
                                                 {
                                                     echo '<div class="w3-col s2">
                                                       <img class="demo w3-opacity w3-hover-opacity-off w3-padding" src="' . $response[$keys[$i]]['image'][$j]['url'] . '" style="width:100%" onclick="currentDiv(' . ($j + 1). ')">
@@ -208,11 +208,11 @@ $mlsId = $_GET['id'];
 
                                   </div>
                                 </div>
-                            
+
                             <!-- </tr>
                             </table>
                             </div> -->
-                   
+
                 </section>
                 <!-- /.content -->
             </div>
@@ -254,7 +254,7 @@ $mlsId = $_GET['id'];
         <script src="../plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
         <script>
-           
+
         var slideIndex = 1;
         showDivs(slideIndex);
 

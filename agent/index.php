@@ -3,7 +3,7 @@ session_start();
 clearstatcache();
 date_default_timezone_set('America/Los_Angeles');
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 require '../databaseConnection.php';
 $dbConn = getConnection();
@@ -49,7 +49,7 @@ $keys = array_keys($response);
 
 
 // $pendingListings = (int)$addedHouseResults['added'];
-// for($i = 0; $i < sizeof($keys); $i++) 
+// for($i = 0; $i < sizeof($keys); $i++)
 // {
 //     if($response[$keys[$i]]['listingAgentID'] == $licenseResult['mlsId'])
 //     {
@@ -77,11 +77,11 @@ $keys = array_keys($response);
                 font-size: 150%;
                 font-weight: bold;
             }
-            
+
             #modal-table {
                 color: black;
             }
-            
+
             .btn-group {
                 display: inline-block!important
             }
@@ -170,8 +170,8 @@ $keys = array_keys($response);
                             <!-- small box -->
                             <div class="small-box bg-blue">
                                 <div class="inner">
-                                    
-                                        <?php 
+
+                                        <?php
                                         if($soldRank == 0)
                                             echo "N/A";
                                         else
@@ -179,54 +179,54 @@ $keys = array_keys($response);
                                             if($soldRank == "1")
                                             {
                                                 echo '<h2>
-                                                        <sup style="font-size: 20px">#</sup>' . 
+                                                        <sup style="font-size: 20px">#</sup>' .
                                                         $soldRank . "  Num: " . $resultNumSold[$soldRank - 1]['numSold'] .
                                                         ' </h2>';
                                                 if(count($resultNumSold) > 1)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($soldRank + 1) . "  Num: " . $resultNumSold[$soldRank]['numSold'] . '</p>';
                                                 }
                                                 if(count($resultNumSold) > 2)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
-                                                        ($soldRank + 2) . "  Num: " . $resultNumSold[$soldRank + 1]['numSold'] . '</p>';  
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
+                                                        ($soldRank + 2) . "  Num: " . $resultNumSold[$soldRank + 1]['numSold'] . '</p>';
                                                 }
                                             }
-                                            else if($soldRank == count($resultNumSold)) 
+                                            else if($soldRank == count($resultNumSold))
                                             {
                                                 if(count($resultNumSold) > 2)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
-                                                        ($soldRank - 2) . "  Num: " . $resultNumSold[$soldRank - 3]['numSold'] . '</p>'; 
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
+                                                        ($soldRank - 2) . "  Num: " . $resultNumSold[$soldRank - 3]['numSold'] . '</p>';
                                                 }
                                                 if(count($resultNumSold) > 1)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($soldRank - 1) . "  Num: " . $resultNumSold[$soldRank - 2]['numSold'] . '</p>';
                                                }
                                                     echo '<h2>
-                                                        <sup style="font-size: 20px">#</sup>' . 
+                                                        <sup style="font-size: 20px">#</sup>' .
                                                         $soldRank . "  Num: " . $resultNumSold[$soldRank - 1]['numSold'] .
                                                         ' </h2>';
-                                                
-                                            }  
+
+                                            }
                                             else
                                             {
-                                                echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($soldRank - 1) . "  Num: " . $resultNumSold[$soldRank - 2]['numSold'] . '</p>';
                                                 echo '<h2>
-                                                        <sup style="font-size: 20px">#</sup>' . 
+                                                        <sup style="font-size: 20px">#</sup>' .
                                                         $soldRank . "  Num: " . $resultNumSold[$soldRank - 1]['numSold'] .
                                                         ' </h2>';
-                                                echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($soldRank + 1) . "  Num: " . $resultNumSold[$soldRank]['numSold'] . '</p>';
                                             }
 
                                         }
 
                                         ?>
-                                   
+
                                     <p>Units Closed Rank</p>
                                 </div>
                                 <div class="icon">
@@ -239,8 +239,8 @@ $keys = array_keys($response);
                             <!-- small box -->
                             <div class="small-box bg-yellow">
                                 <div class="inner">
-                                    
-                                        <?php 
+
+                                        <?php
                                         if($volumeRank == 0)
                                             echo "N/A";
                                         else
@@ -250,47 +250,47 @@ $keys = array_keys($response);
                                             if($volumeRank == "1")
                                             {
                                                 echo '<h2>
-                                                        <sup style="font-size: 20px">#</sup>' . 
+                                                        <sup style="font-size: 20px">#</sup>' .
                                                         $volumeRank . "  $: " . number_format($resultVolSold[$volumeRank - 1]['volSold']) .
                                                         ' </h2>';
                                                 if(count($resultVolSold) > 1)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($volumeRank + 1) . "  $: " . number_format($resultVolSold[$volumeRank]['volSold']) . '</p>';
                                                 }
                                                 if(count($resultVolSold) > 2)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
-                                                        ($volumeRank + 2) . "  $: " . number_format($resultVolSold[$volumeRank + 1]['volSold']) . '</p>';  
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
+                                                        ($volumeRank + 2) . "  $: " . number_format($resultVolSold[$volumeRank + 1]['volSold']) . '</p>';
                                                 }
                                             }
-                                            else if($volumeRank == count($resultVolSold)) 
+                                            else if($volumeRank == count($resultVolSold))
                                             {
                                                 if(count($resultVolSold) > 2)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
-                                                        ($volumeRank - 2) . "  $: " . number_format($resultVolSold[$volumeRank - 3]['volSold']) . '</p>'; 
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
+                                                        ($volumeRank - 2) . "  $: " . number_format($resultVolSold[$volumeRank - 3]['volSold']) . '</p>';
                                                 }
                                                 if(count($resultVolSold) > 1)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($volumeRank - 1) . "  $: " . number_format($resultVolSold[$volumeRank - 2]['volSold']) . '</p>';
                                                }
                                                     echo '<h2>
-                                                        <sup style="font-size: 20px">#</sup>' . 
+                                                        <sup style="font-size: 20px">#</sup>' .
                                                         $volumeRank . "  $: " . number_format($resultVolSold[$volumeRank - 1]['volSold']) .
                                                         ' </h2>';
-                                                
-                                            }  
+
+                                            }
                                             else
                                             {
-                                                echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($volumeRank - 1) . "  $: " . number_format($resultVolSold[$volumeRank - 2]['volSold']) . '</p>';
                                                 echo '<h2>
-                                                        <sup style="font-size: 20px">#</sup>' . 
+                                                        <sup style="font-size: 20px">#</sup>' .
                                                         $volumeRank . "  $: " . number_format($resultVolSold[$volumeRank - 1]['volSold']) .
                                                         ' </h2>';
-                                                echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($volumeRank + 1) . "  $: " . number_format($resultVolSold[$volumeRank]['volSold']) . '</p>';
                                             }
                                         }
@@ -307,57 +307,57 @@ $keys = array_keys($response);
                             <!-- small box -->
                             <div class="small-box bg-green">
                                 <div class="inner">
-                                    
-                                        <?php 
+
+                                        <?php
                                         if($grossRank == 0)
                                             echo "N/A";
                                         else
                                         {
-                                            //echo $grossRank . " $" . number_format($resultGross[$grossRank - 1]['gross']); 
+                                            //echo $grossRank . " $" . number_format($resultGross[$grossRank - 1]['gross']);
                                             if($grossRank == "1")
                                             {
                                                 echo '<h2>
-                                                        <sup style="font-size: 20px">#</sup>' . 
+                                                        <sup style="font-size: 20px">#</sup>' .
                                                         $grossRank . "  $: " . number_format($resultGross[$grossRank - 1]['gross']) .
                                                         ' </h2>';
                                                 if(count($resultGross) > 1)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($grossRank + 1) . "  $: " . number_format($resultGross[$grossRank]['gross']) . '</p>';
                                                 }
                                                 if(count($resultGross) > 2)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
-                                                        ($grossRank + 2) . "  $: " . number_format($resultGross[$grossRank + 1]['gross']) . '</p>';  
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
+                                                        ($grossRank + 2) . "  $: " . number_format($resultGross[$grossRank + 1]['gross']) . '</p>';
                                                 }
                                             }
-                                            else if($grossRank == count($resultGross)) 
+                                            else if($grossRank == count($resultGross))
                                             {
                                                 if(count($resultGross) > 2)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
-                                                        ($grossRank - 2) . "  $: " . number_format($resultGross[$grossRank - 3]['gross']) . '</p>'; 
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
+                                                        ($grossRank - 2) . "  $: " . number_format($resultGross[$grossRank - 3]['gross']) . '</p>';
                                                 }
                                                 if(count($resultGross) > 1)
                                                 {
-                                                    echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                    echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($grossRank - 1) . "  $: " . number_format($resultGross[$grossRank - 2]['gross']) . '</p>';
                                                }
                                                     echo '<h2>
-                                                        <sup style="font-size: 20px">#</sup>' . 
+                                                        <sup style="font-size: 20px">#</sup>' .
                                                         $grossRank . "  $: " . number_format($resultGross[$grossRank - 1]['gross']) .
                                                         ' </h2>';
-                                                
-                                            }  
+
+                                            }
                                             else
                                             {
-                                                echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($grossRank - 1) . "  $: " . number_format($resultGross[$grossRank - 2]['gross']) . '</p>';
                                                 echo '<h2>
-                                                        <sup style="font-size: 20px">#</sup>' . 
+                                                        <sup style="font-size: 20px">#</sup>' .
                                                         $grossRank . "  $: " . number_format($resultGross[$grossRank - 1]['gross']) .
                                                         ' </h2>';
-                                                echo '<p><sup style="font-size: 15px">#</sup>' . 
+                                                echo '<p><sup style="font-size: 15px">#</sup>' .
                                                         ($grossRank + 1) . "  $: " . number_format($resultGross[$grossRank]['gross']) . '</p>';
                                             }
                                         }
@@ -626,7 +626,7 @@ $keys = array_keys($response);
                                             <td>Test Email</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    ' . date('m/d/y', strtotime($day)) . ' 
+                                                    ' . date('m/d/y', strtotime($day)) . '
                                                 </div>
                                                 <i class="fa fa-check-circle" style="color:#5cb85c"></i>
                                             </td>
@@ -681,7 +681,7 @@ $keys = array_keys($response);
                                                   </button>
                                                   <ul class="dropdown-menu">';
 
-                                                  
+
                                                   if($trans['sellerDiscRec'] != NULL && $trans['sellerDiscRec'] != '0000-00-00')
                                                   {
                                                     echo '<li><a href="#" id=recievedComp' . $trans['transId'] . '>Date Recieved: ' . date('m/d/y', strtotime($trans['sellerDiscRec'])) . '</a>
@@ -740,7 +740,7 @@ $keys = array_keys($response);
                                                   </button>
                                                   <ul class="dropdown-menu">';
 /////////
-                                                
+
                                                   if($trans['signedDiscComp'] != NULL && $trans['signedDiscComp'] != '0000-00-00')
                                                   {
                                                     echo '<li><a href="#" id=signedComp'. $trans['transId'] .'>Signed: ' . date('m/d/y', strtotime($trans['signedDiscComp'])) . '</a>
@@ -836,7 +836,7 @@ $keys = array_keys($response);
                                                     {
                                                         echo '<i id=status' . $trans['transId'] .  'generalInspec' . ' class="fa fa-flag blink" style="color:#d9534f"></i>';
                                                     }
-                                            echo '</td>               
+                                            echo '</td>
                                             <td>
                                                 <div class="btn-group">
                                                   <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -854,7 +854,7 @@ $keys = array_keys($response);
                                                         echo '<li><a href="#" id=apprOrd' .$trans['transId'].'>Ordered: N/A</a>
                                                         <input type="date" onChange=saveOrdDate(\''.$trans['transId'] . '\',"appr",this)></li>';
                                                     }
-                                                    
+
                                                 echo '<li role="separator" class="divider"></li>';
 
                                                   if($trans['apprComp'] != NULL && $trans['apprComp'] != '0000-00-00')
@@ -869,8 +869,8 @@ $keys = array_keys($response);
                                                     <input type="date" onChange=saveCompDate(\'' . $trans['transId'] . '\',\'appr\',this)></li>';
                                                     // echo '<li role="separator" class="divider"></li>';
                                                 }
-                                                
-                                                    
+
+
                                                   echo '</ul>
                                                 </div>';
                                                   echo '&nbsp';
@@ -1020,7 +1020,7 @@ $keys = array_keys($response);
                                                     // echo '<li role="separator" class="divider"></li>';
                                                 }
 
-                                                 
+
                                                   echo '</ul>
                                                 </div>';
                                                   echo '&nbsp';
@@ -1073,7 +1073,7 @@ $keys = array_keys($response);
                                                     // echo '<li role="separator" class="divider"></li>';
                                                 }
 
-                                                  
+
                                                   echo '</ul>
                                                 </div>';
                                                   echo '&nbsp';
@@ -1116,7 +1116,7 @@ $keys = array_keys($response);
                                 </div> <!-- /.box-body -->
                             </div> <!-- /.box -->
 
-                           
+
 
                             <div class="box box-primary">
                                 <div class="box-body">
@@ -1169,10 +1169,10 @@ $keys = array_keys($response);
         <script src="../plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
         <script>
-        
+
             //Date picker
             $('#datepicker').datepicker();
-           
+
             jQuery(function($){
                 $('.footable').footable({
                     "paging": {
@@ -1360,7 +1360,7 @@ $keys = array_keys($response);
                 });
 
             });
-        
+
         function takeTransNote(transId)
         {
             var prevNote = $("#" + transId).html();
@@ -1373,7 +1373,7 @@ $keys = array_keys($response);
                     transId: transId,
                     note: noteEntered
                 });
-                
+
             }
 
         }
@@ -1391,7 +1391,7 @@ $keys = array_keys($response);
             //     }
             // }, 60000); // Repeat every 60000 milliseconds (1 minute)
 
-            
+
             function saveNameMisc(transId,type,name)
             {
                 // alert(name.value);
@@ -1413,7 +1413,7 @@ $keys = array_keys($response);
             function saveCompDate(transId,type,date)
             {
 
-                
+
                 var sendDate = date.value;
                 if( type == "recieved")
                 {
@@ -1467,32 +1467,32 @@ $keys = array_keys($response);
                 // updateStatus(transId, type date);
                 $.post( "../staff/saveCompDates.php", { transId: transId, type:type, date:sendDate });
 
-                
+
 
             }
              function saveDateCalendar(transId,type,date)
              {
-          
+
                 var aprvDay = $("#aprvDay"+transId).val();
                 $("#aprvDay" + transId).val(date.value);
                 updateStatus(transId,type,date);
                 $.post( "../staff/saveNewDates.php", { transId: transId, type:type, date:date.value, aprvDay: aprvDay });
-                
+
             }
-            
+
             function saveDaysNum(transId,type,date)
              {
-           
+
                 $.post( "../staff/saveNewDaysNum.php", { transId: transId, type:type, date:date.value });
                 updateStatus(transId,date);
-                  
+
             }
 
             function saveNewDates(transId)
             {
 
                 $("#editDateModal"+transId).modal("toggle");
-                
+
 
                 alert( "Dates Saved" );
                 location.reload();
@@ -1514,18 +1514,18 @@ $keys = array_keys($response);
                   });
 
 
-                
+
             }
 
             function updateStatus(transId, type, date)
             {
                 var aprvDay = $("#aprvDay"+transId).val();
                 // alert(aprvDay);
-                var newDate = moment(date.value).format("YYYY-MM-DD"); 
-                var todayDate = moment().format("YYYY-MM-DD"); 
+                var newDate = moment(date.value).format("YYYY-MM-DD");
+                var todayDate = moment().format("YYYY-MM-DD");
                 var inThreeDays = moment(todayDate).add(3, 'days').format("YYYY-MM-DD");
-               
-                
+
+
                 if(moment(newDate).isSameOrBefore(inThreeDays) && moment(newDate).isSameOrAfter(todayDate))
                 {
                     $("#status" + transId + type).attr('class', 'fa fa-warning');
@@ -1534,7 +1534,7 @@ $keys = array_keys($response);
                 }
                 else if(moment(newDate).isSameOrAfter(todayDate))
                 {
-                    
+
                     $("#status" + transId + type).attr('class', '');
                     // $("#status" + transId + type).css('color', "#5cb85c");
                     // alert("late");

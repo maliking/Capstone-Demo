@@ -2,12 +2,12 @@
 session_start();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 require '../databaseConnection.php';
 $dbConn = getConnection();
 if (isset ($_GET['deleteForm'])) {  //checking whether we have clicked on the "Delete" button
-    $sql = "DELETE FROM BuyerInfo 
+    $sql = "DELETE FROM BuyerInfo
                  WHERE buyerID = '" . $_GET['buyerID'] . "'";
     $stmt = $dbConn->prepare($sql);
     $stmt->execute();
@@ -334,15 +334,15 @@ $keys = array_keys($response);
                                 // WHERE BuyerInfo.userId = :userId
                                 // AND BuyerInfo.houseId = HouseInfo.houseId OR BuyerInfo.userId = :userId AND BuyerInfo.houseId = '0'
                                 // ORDER BY ";
-                                $sql = "SELECT BuyerInfo.*, 
-                                                   HouseInfo.address as address, 
-                                                   HouseInfo.city as city, 
-                                                   HouseInfo.state as state, 
+                                $sql = "SELECT BuyerInfo.*,
+                                                   HouseInfo.address as address,
+                                                   HouseInfo.city as city,
+                                                   HouseInfo.state as state,
                                                    HouseInfo.zip as zip
-                                              FROM BuyerInfo 
-                                         LEFT JOIN HouseInfo 
-                                                ON BuyerInfo.houseId = HouseInfo.houseId 
-                                             WHERE BuyerInfo.userId = :userId 
+                                              FROM BuyerInfo
+                                         LEFT JOIN HouseInfo
+                                                ON BuyerInfo.houseId = HouseInfo.houseId
+                                             WHERE BuyerInfo.userId = :userId
                                           ORDER BY ";
 
                                 if (isset($_GET['visitorSort'])) {
@@ -965,15 +965,15 @@ $keys = array_keys($response);
                                     // WHERE BuyerInfo.userId = :userId
                                     // AND BuyerInfo.houseId = HouseInfo.houseId OR BuyerInfo.userId = :userId AND BuyerInfo.houseId = '0'
                                     // ORDER BY ";
-                                    $sql = "SELECT BuyerInfo.*, 
-                                                   HouseInfo.address as address, 
-                                                   HouseInfo.city as city, 
-                                                   HouseInfo.state as state, 
+                                    $sql = "SELECT BuyerInfo.*,
+                                                   HouseInfo.address as address,
+                                                   HouseInfo.city as city,
+                                                   HouseInfo.state as state,
                                                    HouseInfo.zip as zip
-                                              FROM BuyerInfo 
-                                         LEFT JOIN HouseInfo 
-                                                ON BuyerInfo.houseId = HouseInfo.houseId 
-                                             WHERE BuyerInfo.userId = :userId 
+                                              FROM BuyerInfo
+                                         LEFT JOIN HouseInfo
+                                                ON BuyerInfo.houseId = HouseInfo.houseId
+                                             WHERE BuyerInfo.userId = :userId
                                           ORDER BY ";
 
                                     if (isset($_GET['visitorSort'])) {
@@ -1025,7 +1025,7 @@ $keys = array_keys($response);
                                             echo "<td>" . "</td>";
                                         else
                                             echo "<td>" . date("m-d-Y", strtotime($result['registeredDate'])) . "</td>";
-                                        echo "<td><span style='border-bottom: 1px dotted #000000;  text-decoration: none;' 
+                                        echo "<td><span style='border-bottom: 1px dotted #000000;  text-decoration: none;'
                                     onClick='showHouseMatchModal(" .$result['priceMax'] . "," . $result['bedroomsMin'] . "," . $result['bathroomsMin'] . ")'>"
                                             . $result['firstName'] . " " . $result['lastName'] . "</span></td>";
 

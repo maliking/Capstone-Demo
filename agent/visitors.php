@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://www.oversite.cc/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 require '../databaseConnection.php';
 require '../keys/cred.php';
@@ -385,7 +385,7 @@ for ($h = 0; $h < sizeof($keys); $h++)
         <div class="modal-body">
             <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal" onClick="hangup()">Hang Up</button>
         </div>
-       
+
       </div>
     </div>
   </div>
@@ -432,13 +432,13 @@ for ($h = 0; $h < sizeof($keys); $h++)
                                 <?php
 
                                 $sql = "SELECT BuyerInfo.*,
-                                               HouseInfo.address as address, 
-                                               HouseInfo.city as city, 
-                                               HouseInfo.state as state, 
+                                               HouseInfo.address as address,
+                                               HouseInfo.city as city,
+                                               HouseInfo.state as state,
                                                HouseInfo.zip as zip
-                                          FROM BuyerInfo 
-                                     LEFT JOIN HouseInfo 
-                                            ON BuyerInfo.houseId = HouseInfo.houseId 
+                                          FROM BuyerInfo
+                                     LEFT JOIN HouseInfo
+                                            ON BuyerInfo.houseId = HouseInfo.houseId
                                          WHERE BuyerInfo.userId = :userId;";
 
                                 $namedParameters = array();
@@ -796,7 +796,7 @@ for ($h = 0; $h < sizeof($keys); $h++)
     //             }
     //         }
     //     }
-    
+
 // function makeCall()
 // {
 //     alert("Call");
@@ -830,7 +830,7 @@ function makeEmail(email)
     // alert("Email");
     $('#sendToEmail').text(email);
     $('#sendEmail').modal('toggle');
-    
+
 }
 function sendEmail()
 {

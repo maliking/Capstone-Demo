@@ -5,7 +5,7 @@ session_start();
 $dbConn = getConnection();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 
 $url = 'https://api.idxbroker.com/clients/featured';
@@ -168,8 +168,8 @@ $addedListingsResults = $addedListings->fetchAll();
                 $stmt->execute($namedParameters);
                 $results = $stmt->fetchAll();
 
-                $agentMlsId = "SELECT mlsId 
-                                 FROM UsersInfo 
+                $agentMlsId = "SELECT mlsId
+                                 FROM UsersInfo
                                 WHERE userId = :userId";
                 $namedParameters = array();
                 $namedParameters[':userId'] = $_SESSION['userId'];
@@ -194,11 +194,11 @@ $addedListingsResults = $addedListings->fetchAll();
                                     <div class=\"box-header with-border\">
                                         <h4 class='box-title'>" . $response[$keys[$i]]['address'] . "<br>" .
                              $response[$keys[$i]]['cityName'] . " " .
-                             $response[$keys[$i]]['state'] . ", 
+                             $response[$keys[$i]]['state'] . ",
                                         " . $response[$keys[$i]]['zipcode'] . "</h4>
                                         <div class=\"box-tools pull-right\">
                                           <!--
-                                          <a href='#'><span class=\"label label-default\"><i class='fa fa-trash'></i> 
+                                          <a href='#'><span class=\"label label-default\"><i class='fa fa-trash'></i>
                                           Remove
                                           </span></a>
                                           -->
@@ -216,10 +216,10 @@ $addedListingsResults = $addedListings->fetchAll();
                                     <a class=\"btn btn-block\" href=\"signIn.php?id=" . $response[$keys[$i]]['listingID'] . "\" target=\"_blank\"><i class='fa fa-key'></i> Open House Sign-In</a>
                                     <a class=\"btn btn-block\" href=\"singleListingVisitors.php?id=" .
                              $response[$keys[$i]]['listingID'] . "\" target=\"_blank\"><i class='fa fa-users'></i> Open House Visitors</a>
-                                    <button type=\"button\" class=\"btn btn-link btn-block\" 
+                                    <button type=\"button\" class=\"btn btn-link btn-block\"
                                     onClick=\"matchLeadsModal(" . $response[$keys[$i]]['rntLsePrice'] . "," .
                              $houseBedrooms . "," . $houseBaths .  ")\"> Top 5 Leads</button>
-                                    <button type=\"button\" class=\"btn btn-success btn-block\" 
+                                    <button type=\"button\" class=\"btn btn-success btn-block\"
                                     onClick=\"addTransaction('" . $response[$keys[$i]]['listingID'] . "')\"><i class='fa fa-check'></i> In-Contract</button>
                                 </div>
                                 </div>
@@ -233,18 +233,18 @@ $addedListingsResults = $addedListings->fetchAll();
                                {
                                    $directory = "../addedHouses/" . $addHouse['address'] . "/";
                                    $files = scandir ($directory);
-                                   
+
 
                                    echo "<div id=house" . $addHouse['houseId'] . " class=\"col-xs-12 col-md-6 col-lg-3\">
                                 <div class=\"box\">
                                     <div class=\"box-header with-border\">
                                         <h4 class='box-title'>" . $addHouse['address'] . "<br>" .
                              $addHouse['city'] . " " .
-                             $addHouse['state'] . ", 
+                             $addHouse['state'] . ",
                                         " . $addHouse['zip'] . "</h4>
                                         <div class=\"box-tools pull-right\">
                                           <!--
-                                          <a href='#'><span class=\"label label-default\"><i class='fa fa-trash'></i> 
+                                          <a href='#'><span class=\"label label-default\"><i class='fa fa-trash'></i>
                                           Remove
                                           </span></a>
                                           -->
@@ -262,13 +262,13 @@ $addedListingsResults = $addedListings->fetchAll();
                                     <a class=\"btn btn-block\" href=\"signIn.php?id=" . $addHouse['houseId'] . "\" target=\"_blank\"><i class='fa fa-key'></i> Open House Sign-In</a>
                                     <a class=\"btn btn-block\" href=\"singleListingVisitors.php?id=" .
                              $addHouse['houseId'] . "\" target=\"_blank\"><i class='fa fa-users'></i> Open House Visitors</a>
-                                    <button type=\"button\" class=\"btn btn-link btn-block\" 
+                                    <button type=\"button\" class=\"btn btn-link btn-block\"
                                     onClick=\"matchLeadsModal(" . $addHouse['price'] . "," . $addHouse['bedrooms'] . "," . $addHouse['bathrooms'] .  ")\"> Top 5 Leads</button>
 
-                                    <button type=\"button\" class=\"btn btn-link btn-block\" 
+                                    <button type=\"button\" class=\"btn btn-link btn-block\"
                                     onClick=\"deleteManualListing('" . $addHouse['houseId'] . "')\">Delete</button>
 
-                                    <button type=\"button\" class=\"btn btn-success btn-block\" 
+                                    <button type=\"button\" class=\"btn btn-success btn-block\"
                                     onClick=\"addTransaction('" . $addHouse['houseId'] . "')\"><i class='fa fa-check'></i> In-Contract</button>
                                 </div>
                                 </div>

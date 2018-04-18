@@ -3,10 +3,10 @@ require("../../databaseConnection.php");
 session_start();
 $dbConn = getConnection();
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 if (isset ($_GET['deleteForm'])) {  //checking whether we have clicked on the "Delete" button
-    $sql = "DELETE FROM BuyerInfo 
+    $sql = "DELETE FROM BuyerInfo
                  WHERE buyerID = '" . $_GET['buyerID'] . "'";
     $stmt = $dbConn->prepare($sql);
     $stmt->execute();
@@ -552,7 +552,7 @@ if (isset ($_GET['deleteForm'])) {  //checking whether we have clicked on the "D
 
                 // <button>Call</button>
                 echo "<td>
-                        
+
                         <button>Text</button>
                         <button>Forward Flyer</button>
                     </td>
@@ -577,7 +577,7 @@ if (isset ($_GET['deleteForm'])) {  //checking whether we have clicked on the "D
                                                 <?php
             } //closes foreach
             ?>
-                                               
+
 
 
                                     </table>

@@ -6,7 +6,7 @@ if (!isset($_SESSION['userId'])) {
     header("Location: ../index.html?error=wrong username or password");
 }
 if (isset ($_GET['deleteForm'])) {  //checking whether we have clicked on the "Delete" button
-    $sql = "DELETE FROM BuyerInfo 
+    $sql = "DELETE FROM BuyerInfo
                  WHERE buyerID = '" . $_GET['buyerID'] . "'";
     $stmt = $dbConn->prepare($sql);
     $stmt->execute();
@@ -121,7 +121,7 @@ To change this template use Tools | Templates.
     <?php
     $dbConn = getConnection();
     // $sql = "SELECT * FROM BuyerInfo WHERE userId = :userId";
-    $sql = "SELECT  address, firstName, lastName, email, phone, bedroomsMin, bedroomsMax, priceMin, priceMax 
+    $sql = "SELECT  address, firstName, lastName, email, phone, bedroomsMin, bedroomsMax, priceMin, priceMax
             from BuyerInfo as BI LEFT JOIN HouseInfo as HI ON BI.houseId = HI.houseId WHERE BI.userId = :userId";
     $namedParameters = array();
     $namedParameters[':userId'] = $_SESSION['userId'];

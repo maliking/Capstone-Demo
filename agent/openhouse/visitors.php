@@ -3,10 +3,10 @@ require("../../databaseConnection.php");
 session_start();
 $dbConn = getConnection();
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 if (isset ($_GET['deleteForm'])) {  //checking whether we have clicked on the "Delete" button
-    $sql = "DELETE FROM BuyerInfo 
+    $sql = "DELETE FROM BuyerInfo
                  WHERE buyerID = '" . $_GET['buyerID'] . "'";
     $stmt = $dbConn->prepare($sql);
     $stmt->execute();
@@ -579,8 +579,8 @@ if (isset($_GET['bathroomSort'])) {
                                     return $results['address'] . ", " . $results['city'] . ", " . $results['state'] . " " . $results['zip'];
                                 }*/
                                 $dbConn = getConnection();
-                                $sql = "SELECT * FROM BuyerInfo, HouseInfo 
-                    WHERE BuyerInfo.userId = :userId 
+                                $sql = "SELECT * FROM BuyerInfo, HouseInfo
+                    WHERE BuyerInfo.userId = :userId
                     AND BuyerInfo.houseId = HouseInfo.houseId
                     ORDER BY ";
                                 if (isset($_GET['visitorSort'])) {

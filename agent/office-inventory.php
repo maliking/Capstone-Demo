@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 
 require '../databaseConnection.php';
@@ -78,14 +78,14 @@ if ($code >= 200 || $code < 300) {
 $keys = array_keys($response);
 for ($i = 0; $i < sizeof($keys); $i++) {
 
-                                    
+
                                         $agentName = "SELECT firstName, lastName FROM UsersInfo WHERE mlsId = :mlsId";
                                         $namedParameters = array();
                                         $namedParameters[':mlsId'] = $response[$keys[$i]]['listingAgentID'];
                                         $stmt = $dbConn->prepare($agentName);
                                         $stmt->execute($namedParameters);
                                         $name = $stmt->fetch();
-    array_push($response[$keys[$i]]['agentName'], $name['firstName'] . " " . $name['lastName']);              
+    array_push($response[$keys[$i]]['agentName'], $name['firstName'] . " " . $name['lastName']);
 
 }
 
@@ -272,7 +272,7 @@ $keys = array_keys($response);
                                         else
                                         {
                                             $bathrooms = $response[$keys[$i]]['totalBaths'];
-                                        }   
+                                        }
 
                                         echo '<tr><td> ' . $name['firstName'] . " " . $name['lastName'] .  '</td>
                                                     <td> ' . $response[$keys[$i]]['address'] . " " . $response[$keys[$i]]['cityName'] . ", " . $response[$keys[$i]]['state'] . " " . $response[$keys[$i]]['zipcode'] .  ' </td>
@@ -285,9 +285,9 @@ $keys = array_keys($response);
 
 
                                                     <td ><a href="https://maps.google.com/?q=' . $response[$keys[$i]]['address'] . " " . $response[$keys[$i]]['cityName'] . ", " . $response[$keys[$i]]['state'] . " " . $response[$keys[$i]]['zipcode'] . '" target="_blank"><button >View on Map</button></a></td>
-                                                    
+
                                                 </tr>';
-                                    
+
                                 }
                                 ?>
                                 </tbody>

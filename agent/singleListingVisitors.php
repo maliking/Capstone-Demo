@@ -2,12 +2,12 @@
 session_start();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 require '../databaseConnection.php';
 $dbConn = getConnection();
 if (isset ($_GET['deleteForm'])) {  //checking whether we have clicked on the "Delete" button
-    $sql = "DELETE FROM BuyerInfo 
+    $sql = "DELETE FROM BuyerInfo
                  WHERE buyerID = '" . $_GET['buyerID'] . "'";
     $stmt = $dbConn->prepare($sql);
     $stmt->execute();
@@ -107,7 +107,7 @@ $keys = array_keys($response);
                 font-size: 150%;
                 font-weight: bold;
             }
-            
+
             #modal-table {
                 color: black;
             }
@@ -142,11 +142,11 @@ $keys = array_keys($response);
             <!-- END TEMPLATE nav.php INCLUDE -->
 
             <!-- PAGE-SPECIFIC CSS -->
-            
+
             <!-- Modal -->
   <div class="modal fade" id="addLeadModal" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -224,7 +224,7 @@ $keys = array_keys($response);
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 
@@ -233,7 +233,7 @@ $keys = array_keys($response);
                 <!-- Main content -->
 
                 <section class="content" style="min-height:initial;">
-                   
+
                     <div class="row">
                 <div class="col-xs-12">
                     <div class="box">
@@ -601,13 +601,13 @@ $keys = array_keys($response);
                                     $results = $stmt->fetch();
                                     return $results['address'] . ", " . $results['city'] . ", " . $results['state'] . " " . $results['zip'];
                                 }*/
-                                
-                    //             $sql = "SELECT * FROM BuyerInfo, HouseInfo 
-                    // WHERE BuyerInfo.userId = :userId 
+
+                    //             $sql = "SELECT * FROM BuyerInfo, HouseInfo
+                    // WHERE BuyerInfo.userId = :userId
                     // AND BuyerInfo.houseId = HouseInfo.houseId OR BuyerInfo.userId = :userId AND BuyerInfo.houseId = '0'
                     // ORDER BY ";
                                 $sql = "SELECT BuyerInfo.*, HouseInfo.address as address, HouseInfo.city as city, HouseInfo.state as state, HouseInfo.zip as zip
-                                FROM BuyerInfo LEFT JOIN HouseInfo ON BuyerInfo.houseId = HouseInfo.houseId 
+                                FROM BuyerInfo LEFT JOIN HouseInfo ON BuyerInfo.houseId = HouseInfo.houseId
                                 where BuyerInfo.userId = :userId AND BuyerInfo.houseId = :houseId ORDER BY ";
                                 if (isset($_GET['visitorSort'])) {
                                     if ($visitorSort == 1) {
@@ -707,7 +707,7 @@ $keys = array_keys($response);
                 </div>
                 <!-- /.col -->
             </div>
-                   
+
                 </section>
                 <!-- /.content -->
             </div>
@@ -762,7 +762,7 @@ $keys = array_keys($response);
 <script type='text/javascript'
         src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.0.3/jquery.floatThead.js"></script>
 
-       
+
         <script>
             $(document).ready(function () {
         $('[data-toggle="popover"]').popover({
@@ -788,7 +788,7 @@ $keys = array_keys($response);
 
     $('table').floatThead({
         position: 'absolute'
-       
+
     });
 
 
@@ -806,8 +806,8 @@ $keys = array_keys($response);
     function openFlyerModal() {
         $('#flyerModal').modal('toggle');
     }
-    
-       
+
+
        function leadModal()
        {
         $('#addLeadModal').modal('toggle');
@@ -848,7 +848,7 @@ $keys = array_keys($response);
             $('#addLeadModal').modal('toggle');
             location.reload(true);
             });
-            
+
        }
 
         </script>

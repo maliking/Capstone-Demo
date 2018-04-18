@@ -4,7 +4,7 @@ require '../databaseConnection.php';
 $dbConn = getConnection();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://www.oversite.cc/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 
 
@@ -47,7 +47,7 @@ $keys = array_keys($response);
 
 $houseArray = array();
 $houseCount = 0;
-for ($i = 0; $i < sizeof($keys); $i++) 
+for ($i = 0; $i < sizeof($keys); $i++)
 {
 	if($houseCount >= 5)
 		break;

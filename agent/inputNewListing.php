@@ -5,7 +5,7 @@ session_start();
 $dbConn = getConnection();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://www.oversite.cc/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 
 ?>

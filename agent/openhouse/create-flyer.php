@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp17.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 clearstatcache();
 $listingId = $_GET['id'];
@@ -52,9 +52,9 @@ if($listingId[0] == 'M')
     // print_r($response);
 
     $keys = array_keys($response);
-    for ($i = 0; $i < sizeof($keys); $i++) 
+    for ($i = 0; $i < sizeof($keys); $i++)
     {
-        if ($response[$keys[$i]]['listingID'] == $listingId) 
+        if ($response[$keys[$i]]['listingID'] == $listingId)
         {
             $index = $i;
             break;
@@ -69,7 +69,7 @@ if($listingId[0] == 'M')
     else
         $acres =  (float)$response[$keys[$index]]['acres'];
 
-    
+
     $address = $response[$keys[$index]]['address'];
     $city = $response[$keys[$index]]['cityName'];
     $state = $response[$keys[$index]]['state'];
@@ -91,13 +91,13 @@ else
     $sqFt = $result['sqft'];
     if($sqFt >= 43560)
     {
-        $acres = $sqFt/43560;    
+        $acres = $sqFt/43560;
     }
     else
     {
         $acres = $sqFt;
     }
-    
+
     $address = $result['address'];
     $city = $result['city'];
     $state = $result['state'];
@@ -347,7 +347,7 @@ else
 
 
              <br/>
-             <small>Step 1 Select Images</small>            
+             <small>Step 1 Select Images</small>
 
           </span>
                                     </a>
@@ -380,16 +380,16 @@ else
                                     <?php
                                     if($listingId[0] == 'M')
                                     {
-                                        for ($i = 0; $i < sizeof($keys); $i++) 
+                                        for ($i = 0; $i < sizeof($keys); $i++)
                                         {
 
-                                            if ($response[$keys[$i]]['listingID'] == $listingId) 
+                                            if ($response[$keys[$i]]['listingID'] == $listingId)
                                             {
                                                 $index = $i;
-                                                for ($j = 0; $j < (int)$response[$keys[$i]]['image']['totalCount']; $j++) 
+                                                for ($j = 0; $j < (int)$response[$keys[$i]]['image']['totalCount']; $j++)
                                                 {
                                                     echo '<label class="item col-md-4 col-sm-4 col-xs-6">
-                                                                    <input class="js-switch" type="checkbox" name="imageURL" value="' . $response[$keys[$i]]['image'][$j]['url'] . '"/> 
+                                                                    <input class="js-switch" type="checkbox" name="imageURL" value="' . $response[$keys[$i]]['image'][$j]['url'] . '"/>
                                                                     <img src="' . $response[$keys[$i]]['image'][$j]['url'] . '" style="width:100%; height:100%" >
                                                                 </label>';
                                                 }
@@ -399,7 +399,7 @@ else
                                     }
                                 // else
                                 // {
-                                    
+
                                 //     $directory = "../../addedHouses/" . $address . "/";
                                 //     $files = scandir ($directory);
 
@@ -409,7 +409,7 @@ else
                                 //         $website = "http://www.oversite.cc/addedHouses/" . rawurlencode($address) . "/" . rawurlencode($files[$i]);
 
                                 //         echo '<label class="item col-md-4 col-sm-4 col-xs-6">
-                                //             <input class="js-switch" type="checkbox" name="imageURL" value="' . $website . '"/> 
+                                //             <input class="js-switch" type="checkbox" name="imageURL" value="' . $website . '"/>
                                 //             <img src="' . $website . '" style="width:100%; height:100%" >
                                 //         </label>';
                                 //     }
@@ -437,7 +437,7 @@ else
                                     <label>
                                         <input type="checkbox" class="js-switch" name="lotSize" id="lotSize"
                                                value=<?php echo $acres; ?>/>
-                                        <?php echo "<font size=4>" . $acres . " sqFt Lot Size</font>"; ?> 
+                                        <?php echo "<font size=4>" . $acres . " sqFt Lot Size</font>"; ?>
                                     </label>
                                     </br>
                                     </br>
@@ -493,7 +493,7 @@ else
 
                             // echo '<iframe id="pdf" src="../../../test/' . $result['flyer'] . '" style="width:600px; height:600px;" frameborder="0"></iframe>'; //local
 
-                            echo '<iframe id="pdf" src="http://52.11.24.75/uploadFlyers/' . substr($result['flyer'], 0, -3) . 'pdf" 
+                            echo '<iframe id="pdf" src="http://52.11.24.75/uploadFlyers/' . substr($result['flyer'], 0, -3) . 'pdf"
                                         style="width:600px; height:500px;" frameborder="0"></iframe>';
                             echo "<input type='hidden' name='flyerName' value='" . substr($result['flyer'], 0, -3) . "'/>";
                         }
@@ -952,8 +952,8 @@ else
 
             });
         }
-        
-       
+
+
         $('#flyerModal').modal('hide');
 
     }

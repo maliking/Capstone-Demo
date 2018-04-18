@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-//COMMENTED OUT TO GET WORKING
+//COMMENTED OUT TO GET WORKING <<----------------
 // require 'keys/cred.php';
 // require 'twilio-php-master/Twilio/autoload.php';
 // use Twilio\Rest\Client;

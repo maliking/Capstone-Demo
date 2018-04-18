@@ -4,7 +4,7 @@ require("../databaseConnection.php");
 session_start();
 $dbConn = getConnection();
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://www.oversite.cc/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 
 
@@ -49,7 +49,7 @@ $sql = "INSERT INTO HouseInfo (userId, status, address, city, state, zip, bedroo
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($namedParameters);
 
-    if (isset($_FILES)) 
+    if (isset($_FILES))
     {
     // print_r($_FILES);
     // $targetfolder = "../../../test/";  //local
@@ -61,12 +61,12 @@ $sql = "INSERT INTO HouseInfo (userId, status, address, city, state, zip, bedroo
 
     $file_type = $_FILES['housePictures']['type'];
 
-        if ($file_type == "application/pdf") 
+        if ($file_type == "application/pdf")
         {
 
-            if (move_uploaded_file($_FILES['housePictures']['tmp_name'], $targetfolder)) 
+            if (move_uploaded_file($_FILES['housePictures']['tmp_name'], $targetfolder))
             {
-               
+
                 $im = new Imagick();
 
                 $im->setResolution(300, 300);
@@ -78,12 +78,12 @@ $sql = "INSERT INTO HouseInfo (userId, status, address, city, state, zip, bedroo
                 $im->destroy();
 
 
-            } 
-        } 
+            }
+        }
     }
         // $filename = '../addedHouses/'. $address;
 
-        // if (is_dir($filename)) 
+        // if (is_dir($filename))
         // {
             // mkdir($filename, 0777);
         // }
@@ -91,20 +91,20 @@ $sql = "INSERT INTO HouseInfo (userId, status, address, city, state, zip, bedroo
 // $total = count($_FILES['housePictures']['name']);
 
 
-// for($i=0; $i<$total; $i++) 
+// for($i=0; $i<$total; $i++)
 // {
 
 //             $tmp_name = $_FILES["housePictures"]["tmp_name"][$i];
 //         // basename() may prevent filesystem traversal attacks;
 //         // further validation/sanitation of the filename may be appropriate
 //         $folder = "../addedHouses/" . $address . "/";
-        
+
 
 //         $name = basename($_FILES["housePictures"]["name"][$i]);
 //         $target = $folder . $name;
 //         // echo $name;
-  
-//     if(move_uploaded_file($tmp_name, $target)) 
+
+//     if(move_uploaded_file($tmp_name, $target))
 //     {
 
 //       //Handle other code here
@@ -114,7 +114,7 @@ $sql = "INSERT INTO HouseInfo (userId, status, address, city, state, zip, bedroo
 //     else{
 //         echo "failed <br><br>";
 //     }
-  
+
 // }
 
 header('Location: http://www.oversite.cc/agent/my-inventory.php');
@@ -125,7 +125,7 @@ header('Location: http://www.oversite.cc/agent/my-inventory.php');
 //         // basename() may prevent filesystem traversal attacks;
 //         // further validation/sanitation of the filename may be appropriate
 //         $folder = "../addedHouses/" . $address . "/";
-        
+
 
 //         $name = basename($_FILES["housePictures"]["name"][$key]);
 //         $target = realpath($folder . $name);

@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 require '../databaseConnection.php';
 $dbConn = getConnection();
@@ -50,7 +50,7 @@ $result = $stmt->fetch();
                 font-size: 150%;
                 font-weight: bold;
             }
-            
+
             #modal-table {
                 color: black;
             }
@@ -92,7 +92,7 @@ $result = $stmt->fetch();
             <div class="content-wrapper">
                 <!-- Main content -->
                 <section class="content" style="min-height:initial;">
-                   
+
 
                     <!--MODAL AREA!!-->
 

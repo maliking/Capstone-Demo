@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 require 'databaseConnection.php';
 $dbConn = getConnection();
@@ -26,14 +26,14 @@ $dbConn = getConnection();
                 font-size: 150%;
                 font-weight: bold;
             }
-            
+
             #modal-table {
                 color: black;
             }
 
         </style>
         <!-- NOTIFICATION Links-->
-        
+
 
         <!-- daterange picker -->
         <link rel="stylesheet" href="plugins/bootstrap-daterangepicker/daterangepicker.css">
@@ -84,7 +84,7 @@ $dbConn = getConnection();
         <!-- END TEMPLATE default-css.php INCLUDE -->
 
 
-      
+
         <!-- Custom Theme Scripts -->
         <script src="build/js/custom.min.js"></script>
 
@@ -95,8 +95,8 @@ $dbConn = getConnection();
         <script src="plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
         <script>
-           
-           
+
+
         </script>
 
 

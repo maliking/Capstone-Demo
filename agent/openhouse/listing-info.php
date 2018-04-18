@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['userId'])) {
-    header("Location: http://jjp2017.org/login.php");
+    header("Location: http://oversite.maliking.com/login.php");
 }
 
 require '../../databaseConnection.php';
@@ -192,7 +192,7 @@ $listingId = $_GET['id'];
                         } else {
 
 
-                            echo '<iframe id="pdf" src="../../uploadFlyers/' . $result['flyer'] . '" 
+                            echo '<iframe id="pdf" src="../../uploadFlyers/' . $result['flyer'] . '"
                                         style="width:600px; height:500px;" frameborder="0"></iframe>';
                         }
                         ?>
