@@ -44,14 +44,14 @@ $otherHousesStmt = $dbConn->prepare($otherHouses);
 $otherHousesStmt->execute($otherHouseParam);
 $otherHouseResults = $otherHousesStmt->fetchAll();
 
-
-//Twilio call functionality
-$accountSid = $sid;
-$authToken  = $token;
-$capability = new ClientToken($accountSid, $authToken);
-$capability->allowClientOutgoing($appSid);
-$capability->allowClientIncoming('joey');
-$token = $capability->generateToken();
+//Commented out to make page work for demo
+// //Twilio call functionality
+// $accountSid = $sid;
+// $authToken  = $token;
+// $capability = new ClientToken($accountSid, $authToken);
+// $capability->allowClientOutgoing($appSid);
+// $capability->allowClientIncoming('joey');
+// $token = $capability->generateToken();
 
 //End Twilio Functionality
 
