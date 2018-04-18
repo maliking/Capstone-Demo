@@ -81,12 +81,12 @@ $_SESSION['license'] = $licenseResult['license'];
             <div class="box-body box-profile">
               <!-- <img class="profile-user-img img-responsive img-circle" src="../dist/img/user2-160x160.jpg" alt="User profile picture">
               <h3 class="profile-username text-center"><?php echo $licenseResult['firstName'] . " " . $licenseResult['lastName']; ?></h3> -->
-
-              <img src=<?php if(isset($agentInfo['picture']))
+<img class="profile-user-img img-responsive img-circle"  src=<?php if(isset($agentInfo['picture']))
                                                           echo "agentPictures/". $agentInfo['picture'];
                                                       else
                                                           echo "\"../dist/img/user2-160x160.jpg\""; ?> class="user-image"
-                                               alt="User Image"> <span class="hidden-xs"><?php echo $agentInfo['firstName'] . " " . $agentInfo['lastName'] . " #" . $agentInfo['license'];?></span> </a>
+                                               alt="User Profile Picture">
+                                               <span class="hidden-xs"><?php echo $agentInfo['firstName'] . " " . $agentInfo['lastName'] . " #" . $agentInfo['license'];?></span> </a>
 
                 <ul class="nav nav-pills nav-stacked admin-menu" >
                     <li class="active"><a href="" data-target-id="profile"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
