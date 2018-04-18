@@ -35,7 +35,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="header-style treeview">
+            <!-- <li class="header-style treeview">
                 <a href="#"><span class="header-color">TRANSACTIONS</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
@@ -46,8 +46,8 @@
                     <li><a href="monthlyReport.php"><i class="fa fa-file-text-o"></i> <span>Monthly Report</span></a></li>
                     <li><a href="pastSales.php"><i class="fa fa-archive"></i> <span>Past Sales</span></a></li>
                 </ul>
-            </li>
-            <li class="header-style treeview">
+            </li> -->
+            <!-- <li class="header-style treeview">
                 <a href="#"><span class="header-color">STATISTICS</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
@@ -57,7 +57,7 @@
                     <li><a href="analytics.php"><i class="fa fa-line-chart"></i> <span> Analytics</span></a></li>
                     <li><a href="myEarnings.php"><i class="fa fa-money"></i> <span>My Earnings</span></a></li>
                 </ul>
-            </li>
+            </li> -->
         </ul>
         <!-- /.sidebar-menu -->
     </section>
