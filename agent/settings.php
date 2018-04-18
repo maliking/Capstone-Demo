@@ -86,7 +86,7 @@ $_SESSION['license'] = $licenseResult['license'];
                                                       else
                                                           echo "\"../dist/img/user2-160x160.jpg\""; ?> class="user-image"
                                                alt="User Profile Picture">
-                                               <span class="hidden-xs"><?php echo $agentInfo['firstName'] . " " . $agentInfo['lastName'] . " #" . $agentInfo['license'];?></span> </a>
+                                               <span class="hidden-xs"><?php echo $agentInfo['firstName'] . " " . $agentInfo['lastName']?></span> </a>
 
                 <ul class="nav nav-pills nav-stacked admin-menu" >
                     <li class="active"><a href="" data-target-id="profile"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
