@@ -421,7 +421,7 @@ for ($h = 0; $h < sizeof($keys); $h++)
                                     <th data-breakpoints="xs sm">Property</th>
 
                                     <!-- <th data-breakpoints="xs sm">How soon are you looking to purchase a home?</th> -->
-                                    <th data-breakpoints="xs sm" data-toggle="tooltip" title="How soon are you looking to purchase a home?">How Soon</th>
+                                    <th data-breakpoints="xs sm" data-toggle="tooltip" title="How soon are you looking to purchase a home?">How Soon..</th>
                                     <th data-breakpoints="xs sm">Pre-approved?</th>
                                     <th data-breakpoints="xs sm">Price</th>
                                     <th data-breakpoints="xs sm">Bedrooms</th>
