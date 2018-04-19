@@ -420,7 +420,8 @@ for ($h = 0; $h < sizeof($keys); $h++)
                                     <th data-breakpoints="xs">Email</th>
                                     <th data-breakpoints="xs sm">Property</th>
 
-                                    <th data-breakpoints="xs sm">How soon are you looking to purchase a home?</th>
+                                    <!-- <th data-breakpoints="xs sm">How soon are you looking to purchase a home?</th> -->
+                                    <th data-breakpoints="xs sm" data-toggle="tooltip" title="How soon are you looking to purchase a home?">How Soon</th>
                                     <th data-breakpoints="xs sm">Pre-approved?</th>
                                     <th data-breakpoints="xs sm">Price</th>
                                     <th data-breakpoints="xs sm">Bedrooms</th>
@@ -639,6 +640,10 @@ for ($h = 0; $h < sizeof($keys); $h++)
         src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.0.3/jquery.floatThead.js"></script>
 
 <script type="text/javascript" src="//media.twiliocdn.com/sdk/js/client/v1.3/twilio.min.js"></script>
+
+<script>
+$('th[data-toggle="tooltip"]').tooltip();
+</script>
 
 <script>
     $(document).ready(function () {
