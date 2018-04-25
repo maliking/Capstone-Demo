@@ -1,10 +1,11 @@
 <?php
 //session_start();
 require 'databaseConnection.php';
-require 'keys/cred.php';
-require 'twilio-php-master/Twilio/autoload.php';
+//Commenting out to see if page will work
+// require 'keys/cred.php';
+// require 'twilio-php-master/Twilio/autoload.php';
 
-use Twilio\Rest\Client;
+// use Twilio\Rest\Client;
 
 session_start();
 $dbConn = getConnection();
@@ -40,7 +41,7 @@ $stmt = $dbConn->prepare($sql);
 $stmt->execute($namedParameters);
 //$stmt->execute();
 //$result = $stmt->fetch(); //We are expecting one record
-$twilio_phone_number = "+18315851661";
+// $twilio_phone_number = "+18315851661";
 // if($houseId == "89")
 // {
 $client = new Client($sid, $token);
