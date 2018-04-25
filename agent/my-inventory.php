@@ -231,8 +231,8 @@ $addedListingsResults = $addedListings->fetchAll();
 
                                foreach($addedListingsResults as $addHouse)
                                {
-                                   $directory = "../addedHouses/" . $addHouse['address'] . "/";
-                                   $files = scandir ($directory);
+                                  //  $directory = "../addedHouses/" . $addHouse['address'] . "/";
+                                  //  $files = scandir ($directory);
 
 
                                    echo "<div id=house" . $addHouse['houseId'] . " class=\"col-xs-12 col-md-6 col-lg-3\">
