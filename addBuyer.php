@@ -1,11 +1,7 @@
 <?php
-//session_start();
-require 'databaseConnection.php';
-//Commenting out to see if page will work
-// require 'keys/cred.php';
-// require 'twilio-php-master/Twilio/autoload.php';
 
-// use Twilio\Rest\Client;
+require 'databaseConnection.php';
+
 
 session_start();
 $dbConn = getConnection();
@@ -39,42 +35,8 @@ $namedParameters[':houseId'] = $houseId;
 $namedParameters[':userId'] = $userId;
 $stmt = $dbConn->prepare($sql);
 $stmt->execute($namedParameters);
-//$stmt->execute();
-//$result = $stmt->fetch(); //We are expecting one record
-// $twilio_phone_number = "+18315851661";
-// if($houseId == "89")
-// {
-// $client = new Client($sid, $token);
-// $client->messages->create(
-//     $phone,
-//     array(
-//         "From" => $twilio_phone_number,
-//         "Body" => "Flyer",
-//         'mediaUrl' => "http://52.11.24.75/flyers/Tynan_Flyer.jpg",
-//     )
-// );
-// }
-// else if($houseId == "193")
-// {
-// 	$client = new Client($sid, $token);
-// 	$client->messages->create(
-// 	$phone,
-// 	array(
-// 	"From" => $twilio_phone_number,
-// 	"Body" => "Flyer",
-// 	'mediaUrl' => "http://52.11.24.75/keys/declaration.jpg",
-// 	)
-// 	);
-// }
-//if (empty($result)) {
+
 header("Location: Confirmation.php");
 //}
-/*else {
 
-$_SESSION['username']  = $result['username'];
-$_SESSION['adminName'] = $result['firstName'] . " " . $result['lastName'];
-$_SESSION['userId'] = $result['userId'];
-header("Location: quiz.php");
-
-}*/
 ?>
