@@ -44,15 +44,15 @@ $stmt->execute($namedParameters);
 // $twilio_phone_number = "+18315851661";
 // if($houseId == "89")
 // {
-$client = new Client($sid, $token);
-$client->messages->create(
-    $phone,
-    array(
-        "From" => $twilio_phone_number,
-        "Body" => "Flyer",
-        'mediaUrl' => "http://52.11.24.75/flyers/Tynan_Flyer.jpg",
-    )
-);
+// $client = new Client($sid, $token);
+// $client->messages->create(
+//     $phone,
+//     array(
+//         "From" => $twilio_phone_number,
+//         "Body" => "Flyer",
+//         'mediaUrl' => "http://52.11.24.75/flyers/Tynan_Flyer.jpg",
+//     )
+// );
 // }
 // else if($houseId == "193")
 // {
