@@ -38,7 +38,7 @@ $fyResult = $fyStmt->fetch();
 
 $activeListings = 0;
 $potentialGross = 0;
-for($i = 0; $i < sizeof($keys); $i++) 
+for($i = 0; $i < sizeof($keys); $i++)
 {
     if($response[$keys[$i]]['listingAgentID'] == $agentInfo['mlsId'])
     {
@@ -51,7 +51,7 @@ for($i = 0; $i < sizeof($keys); $i++)
 
 $prevYearConn =getConnection();
 
-$prevYearGross = "SELECT SUM(finalComm) as prevGross, license FROM `commInfo` WHERE 
+$prevYearGross = "SELECT SUM(finalComm) as prevGross, license FROM `commInfo` WHERE
                 YEAR(date) = YEAR(DATE_SUB( CURRENT_TIMESTAMP () , INTERVAL 1 YEAR )) AND license = :license GROUP BY license";
 $prevYearParameters = array();
 $prevYearParameters[':license'] = $agentInfo['license'];
@@ -103,7 +103,7 @@ foreach ($resultNumSold as $sold) {
     {
         $soldRank = 0;
     }
-  
+
 }
 
 $volumeRank = 0;
@@ -179,14 +179,14 @@ foreach ($resultGross as $gross) {
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <!-- User image in navbar--><img src=<?php if(isset($agentInfo['picture']))
-                                                                    echo "agentPictures/". $agentInfo['picture']; 
+                                                                    echo "agentPictures/". $agentInfo['picture'];
                                                                 else
                                                                     echo "\"../dist/img/user2-160x160.jpg\""; ?> class="user-image"
                                                          alt="User Image"> <span class="hidden-xs"><?php echo $agentInfo['firstName'] . " " . $agentInfo['lastName'] . " #" . $agentInfo['license'];?></span> </a>
                     <ul class="dropdown-menu">
                         <!-- User image in the menu -->
                         <li class="user-header"><img src=<?php if(isset($agentInfo['picture']))
-                                                                    echo "agentPictures/". $agentInfo['picture']; 
+                                                                    echo "agentPictures/". $agentInfo['picture'];
                                                                 else
                                                                     echo "\"../dist/img/user2-160x160.jpg\""; ?> class="img-circle"
                                                      alt="User Image">
@@ -194,7 +194,7 @@ foreach ($resultGross as $gross) {
                                 <small>Member since Nov. 2012</small>
                             </p>
                         </li>
-                       
+
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left"><a href="settings.php" class="btn btn-default btn-flat">Settings</a></div>
@@ -204,7 +204,7 @@ foreach ($resultGross as $gross) {
                     </ul>
                 </li>
                 <!-- Control Sidebar Toggle Button -->
-                <li><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
+                <!-- <li><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li> -->
             </ul>
         </div>
     </nav>

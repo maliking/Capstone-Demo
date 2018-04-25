@@ -33,7 +33,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 btn-admin\">Switch to Agent</a>";
             }
         ?>
-        
+
 
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
@@ -47,14 +47,14 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     <ul class="dropdown-menu">
                         <!-- User image in the menu -->
                         <li class="user-header"><img src=<?php if(isset($agentInfo['picture']))
-                                                                    echo "agent/agentPictures/". $agentInfo['picture']; 
+                                                                    echo "agent/agentPictures/". $agentInfo['picture'];
                                                                 else
                                                                     echo "dist/img/user2-160x160.jpg"; ?> class="img-circle" alt="User Image">
                             <p> <?=$_SESSION['username'];?>
                                 <small>Member since Nov. 2012</small>
                             </p>
                         </li>
-                      
+
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left"><a href="#" class="btn btn-default btn-flat">Profile</a></div>
@@ -64,7 +64,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     </ul>
                 </li>
                 <!-- Control Sidebar Toggle Button -->
-                <li><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
+                <!-- <li><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li> -->
             </ul>
         </div>
     </nav>
