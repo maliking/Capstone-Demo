@@ -154,67 +154,67 @@ date_default_timezone_set('America/Los_Angeles');
                                         <table class="table no-margin">
                                             <thead>
                                                 <tr>
-                                                    <th>Order ID</th>
-                                                    <th>Item</th>
+                                                    <th>MLS #</th>
+                                                    <th>Address</th>
                                                     <th>Status</th>
-                                                    <th>Popularity</th>
+                                                    <th>Due Date</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                                    <td>Call of Duty IV</td>
-                                                    <td><span class="label label-success">Shipped</span></td>
+                                                    <td><a href="pages/examples/invoice.html">70590778</a></td>
+                                                    <td>230 Happy St, Salinas</td>
+                                                    <td><span class="label label-success">Inspection</span></td>
                                                     <td>
-                                                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                                                        <div class="sparkbar" data-color="#00a65a" data-height="20">5/2 Wed</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                                                    <td>Samsung Smart TV</td>
-                                                    <td><span class="label label-warning">Pending</span></td>
+                                                    <td><a href="pages/examples/invoice.html">95348384 </a></td>
+                                                    <td>432 Granger Rd, Salinas</td>
+                                                    <td><span class="label label-warning">Contingency</span></td>
                                                     <td>
-                                                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                                                        <div class="sparkbar" data-color="#f39c12" data-height="20">5/4 Fri</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                                                    <td>iPhone 6 Plus</td>
-                                                    <td><span class="label label-danger">Delivered</span></td>
+                                                    <td><a href="pages/examples/invoice.html">79384834</a></td>
+                                                    <td>70495 Reed Dr, Salinas</td>
+                                                    <td><span class="label label-success">Inspection</span></td>
                                                     <td>
-                                                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                                                        <div class="sparkbar" data-color="#f56954" data-height="20">5/8 Tues</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                                                    <td>Samsung Smart TV</td>
-                                                    <td><span class="label label-info">Processing</span></td>
+                                                    <td><a href="pages/examples/invoice.html">71293274</a></td>
+                                                    <td>4234 Rooter St, Monterey</td>
+                                                    <td><span class="label label-info">Disclosure</span></td>
                                                     <td>
-                                                        <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
+                                                        <div class="sparkbar" data-color="#00c0ef" data-height="20">5/9 Wed</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                                                    <td>Samsung Smart TV</td>
-                                                    <td><span class="label label-warning">Pending</span></td>
+                                                    <td><a href="pages/examples/invoice.html">64722358</a></td>
+                                                    <td>213 Oceanside Dr, Sand City</td>
+                                                    <td><span class="label label-warning">Contingency</span></td>
                                                     <td>
-                                                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                                                        <div class="sparkbar" data-color="#f39c12" data-height="20">5/14 Mon</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                                                    <td>iPhone 6 Plus</td>
-                                                    <td><span class="label label-danger">Delivered</span></td>
+                                                    <td><a href="pages/examples/invoice.html">56958434</a></td>
+                                                    <td>3213 Parat Rd, Seaside</td>
+                                                    <td><span class="label label-danger">EMD</span></td>
                                                     <td>
-                                                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                                                        <div class="sparkbar" data-color="#f56954" data-height="20">5/15 Tue</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                                    <td>Call of Duty IV</td>
-                                                    <td><span class="label label-success">Shipped</span></td>
+                                                    <td><a href="pages/examples/invoice.html">79843434</a></td>
+                                                    <td>5340 Woard Dr, Salinas</td>
+                                                    <td><span class="label label-success">Inspection</span></td>
                                                     <td>
-                                                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                                                        <div class="sparkbar" data-color="#00a65a" data-height="20">5/18 Fri</div>
                                                     </td>
                                                 </tr>
                                             </tbody>
