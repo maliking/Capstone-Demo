@@ -1,270 +1,245 @@
+<?php
+date_default_timezone_set('America/Los_Angeles');
+?>
+
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>RE/MAX Salinas | Dashboard</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RE/MAX Salinas | Dashboard</title>
 
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css' rel='stylesheet' />
+        <script src='dist/js/vendor/moment-with-locales.min.js'></script>
+        
 
-    <!-- BEGIN TEMPLATE default-css.php INCLUDE -->
-    <?php include "./templates-admin/default-css.php" ?>
-    <!-- END TEMPLATE default-css.php INCLUDE -->
+        <!-- BEGIN TEMPLATE default-css.php INCLUDE -->
+        <?php include "templates-admin/default-css.php" ?>
+        <!-- END TEMPLATE default-css.php INCLUDE -->
 
-    <!-- PAGE-SPECIFIC CSS -->
-    <link rel="stylesheet" href="./dist/css/vendor/footable.bootstrap.min.css">
-</head>
 
-<body class="hold-transition skin-black sidebar-mini">
-<!-- Site Wrapper -->
-<div class="wrapper">
+    </head>
 
-    <!-- BEGIN TEMPLATE header.php INCLUDE -->
-    <?php include "./templates-admin/header.php" ?>
-    <!-- END TEMPLATE header.php INCLUDE -->
+    <body class="hold-transition skin-red-light sidebar-mini">
+        <!-- Site Wrapper -->
+        <div class="wrapper">
 
-    <!-- BEGIN TEMPLATE nav.php INCLUDE -->
-    <?php include "./templates-admin/nav.php" ?>
-    <!-- END TEMPLATE nav.php INCLUDE -->
+            <!-- BEGIN TEMPLATE header.php INCLUDE -->
+            <?php include "templates-admin/header.php" ?>
+            <!-- END TEMPLATE header.php INCLUDE -->
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Admin Dashboard
-                <small>Week Overview</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li>Overview</li>
-                <li class="active"><a href="#"><i class="fa fa-dashboard"></i> Admin Dashboard</a></li>
-            </ol>
-        </section>
+            <!-- BEGIN TEMPLATE nav.php INCLUDE -->
+            <?php include "templates-admin/nav.php" ?>
+            <!-- END TEMPLATE nav.php INCLUDE -->
 
-        <!-- Main content -->
-        <section class="content">
-            <!-- Small boxes (Stat box) -->
-            <div class="row">
-                <div class="col-lg-2 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-aqua">
-                        <div class="inner">
-                            <h3>4</h3>
-                            <p>Active Listings</p>
+
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <section class="content">
+                    <!-- Content Wrapper. Contains page content -->
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>4</h3>
+                                    <p>Active Listings</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-flash"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="icon">
-                            <i class="fa fa-flash"></i>
+                        <!-- ./col -->
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-yellow">
+                                <div class="inner">
+                                    <h3>2</h3>
+                                    <p>Pending Listings</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>3</h3>
+                                    <p>Sold Listings</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-tag"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-orange">
+                                <div class="inner">
+                                    <h3>
+                                        <sup style="font-size: 20px">$</sup>14,903
+                                    </h3>
+                                    <p>Avg. Agent Commission</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-money"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <!-- ./col -->
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-blue">
+                                <div class="inner">
+                                    <h3>2.21<sup
+                                            style="font-size: 20px">%</sup></h3>
+
+                                    <p>Avg. Agent Commission </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-percent"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <!-- ./col -->
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        <sup style="font-size: 20px">$</sup> 32,493
+                                    </h3>
+                                    <p>Total Net Earnings</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-bank"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-2 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-yellow">
-                        <div class="inner">
-                            <h3>2</h3>
-                            <p>Pending Listings</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-clock-o"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-2 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-green">
-                        <div class="inner">
-                            <h3>3</h3>
-                            <p>Sold Listings</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-tag"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-2 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-orange">
-                        <div class="inner">
-                            <h3>
-                                <sup style="font-size: 20px">$</sup>14,903
-                            </h3>
-                            <p>Avg. Agent Commission</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-money"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <!-- ./col -->
-                <div class="col-lg-2 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-blue">
-                        <div class="inner">
-                            <h3>2.21<sup
-                                        style="font-size: 20px">%</sup></h3>
 
-                            <p>Avg. Agent Commission </p>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-percent"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <!-- ./col -->
-                <div class="col-lg-2 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-red">
-                        <div class="inner">
-                            <h3>
-                                <sup style="font-size: 20px">$</sup> 32,493
-                            </h3>
-                            <p>Total Net Earnings</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-bank"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="box">
-                        <div class="box-header">
-                            <h4>Active/Active Contingent Properties</h4>
-                        </div>
+
+                    <div class="box box-primary">
                         <div class="box-body">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Property</th>
-                                    <th data-breakpoints="all">Client Name</th>
-                                    <th data-breakpoints="all">Client Number</th>
-                                    <th data-breakpoints="all">Client Email</th>
-                                    <th data-breakpoints="xs sm"><a class="dotted" href="#" data-toggle="tooltip"
-                                                                    data-placement="top"
-                                                                    title="Approval Date">Aprv. </a></th>
-                                    <th data-breakpoints="xs sm"><a class="dotted" href="#" data-toggle="tooltip"
-                                                                    data-placement="top" title="Earnest Money Deposit">EMD </a>
-                                    </th>
-                                    <th data-breakpoints="xs sm"><a class="dotted" href="#" data-toggle="tooltip"
-                                                                    data-placement="top" title="Disclosures">Disc. </a>
-                                    </th>
-
-                                    <th data-breakpoints="xs sm"><a class="dotted" href="#" data-toggle="tooltip"
-                                                                    data-placement="top" title="Inspection">Insp. </a>
-                                    </th>
-
-                                    <th data-breakpoints="xs sm"><a class="dotted" href="#" data-toggle="tooltip"
-                                                                    data-placement="top" title="Appraisal">Appr. </a>
-                                    </th>
-
-                                    <th data-breakpoints="xs sm"><a class="dotted" href="#" data-toggle="tooltip"
-                                                                    data-placement="top"
-                                                                    title="Loan Contingencies">LC </a></th>
-                                    <th data-breakpoints="xs sm"><a class="dotted" href="#" data-toggle="tooltip"
-                                                                    data-placement="top"
-                                                                    title="Close of Escrow">COE </a></th>
-                                    <th data-breakpoints="xs sm">Notes</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-
-                                    <td>1204 Rogers Ct. Salinas, CA 94934</td>
-                                    <td>Patty Hershang</td>
-                                    <td>831-382-4833</td>
-                                    <td>phershang@gmail.com</td>
-
-                                    <td>3/1/17
-                                        <br>
-                                        <span class="label label-success">Done! <i
-                                                    class="fa fa-check-circle-o"></i></span>
-                                    </td>
-                                    <td>3/1/17
-                                        <br>
-                                        <span class="label label-success">Done! <i
-                                                    class="fa fa-check-circle-o"></i></span>
-                                    </td>
-                                    <td>3/1/17 <a href="#" data-trigger="hover focus" title="<b>Ordered:</b> 3/2/17"
-                                                  data-toggle="popover" data-Oplacement="right"
-                                                  data-content="<b>Completed:</b> 3/4/17"><i
-                                                    class="fa fa-chevron-circle-right"></i></a>
-                                        <br>
-                                        <span class="label label-danger">Overdue</span>
-                                    </td>
-
-                                    <td>3/1/17 <a href="#" data-trigger="hover focus" title="<b>Ordered:</b> 3/2/17"
-                                                  data-toggle="popover" data-Oplacement="right"
-                                                  data-content="<b>Completed:</b> 3/4/17"><i
-                                                    class="fa fa-chevron-circle-right"></i></a>
-                                        <br>
-                                        <span class="label label-warning">Due in 8d</span>
-                                    </td>
-
-                                    <td>3/1/17 <a href="#" data-trigger="hover focus" title="<b>Ordered:</b> 3/2/17"
-                                                  data-toggle="popover" data-Oplacement="right"
-                                                  data-content="<b>Completed:</b> 3/4/17"><i
-                                                    class="fa fa-chevron-circle-right"></i></a>
-                                        <br>
-                                        <span class="label label-warning">Due in 8d</span>
-                                    </td>
-
-                                    <td>3/1/17
-                                        <br>
-                                        <span class="label label-default">Incomplete</span>
-                                    </td>
-                                    <td>3/1/17
-                                        <br>
-                                        <span class="label label-default">Incomplete</span>
-                                    </td>
-                                    <td>Write some notes here!</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <!-- THE CALENDAR -->
+                            <div id="calendar" ></div>
                         </div>
                         <!-- /.box-body -->
                     </div>
-                    <!-- /.box -->
-                </div>
-                <!-- /.col -->
+
+                </section>
+                <!-- /.content -->
             </div>
-            <!-- /.row -->
-        </section>
-    </div>
-    <!-- /.content-wrapper -->
-</div>
-<!-- /.wrapper -->
+            <!-- /.content-wrapper -->
+        </div>
+        <!-- /.wrapper -->
 
-<!-- BEGIN TEMPLATE default-footer.php INCLUDE -->
-<?php include "./templates-admin/default-footer.php" ?>
-<!-- END TEMPLATE default-footer.php INCLUDE -->
 
-<!-- BEGIN TEMPLATE default-js.php INCLUDE -->
-<?php include "./templates-admin/default-js.php" ?>
-<!-- END TEMPLATE default-js.php INCLUDE -->
 
-<!-- PAGE-SPECIFIC JS -->
-<script src="./dist/js/vendor/footable.min.js"></script>
+        <!-- BEGIN TEMPLATE default-footer.php INCLUDE -->
+        <?php include "templates-admin/default-footer.php" ?>
+        <!-- END TEMPLATE default-footer.php INCLUDE -->
 
-<script>
-    jQuery(function ($) {
-        $('.table').footable({});
+        <!-- BEGIN TEMPLATE default-js.php INCLUDE -->
+        <?php include "templates-admin/default-js.php" ?>
+        <!-- END TEMPLATE default-css.php INCLUDE -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+        
+        <script>
+$(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+        defaultView: 'agendaWeek',
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listWeek'
+      },
+      defaultDate: '2018-03-12',
+      navLinks: true, // can click day/week names to navigate views
+
+      weekNumbers: true,
+      weekNumbersWithinDays: true,
+      weekNumberCalculation: 'ISO',
+
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2018-03-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2018-03-07',
+          end: '2018-03-10'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2018-03-09T16:00:00'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2018-03-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2018-03-11',
+          end: '2018-03-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2018-03-12T10:30:00',
+          end: '2018-03-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2018-03-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2018-03-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2018-03-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2018-03-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2018-03-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2018-03-28'
+        }
+      ]
     });
-</script>
-<script>
-    $(document).ready(function () {
-        $('[data-toggle="popover"]').popover({
-            html: true
-        });
-    });
-</script>
-</body>
+
+  });
+        </script>
+        
+
+
+    </body>
 
 </html>
