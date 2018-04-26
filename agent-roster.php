@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="hold-transition skin-black sidebar-mini">
+<body class="hold-transition skin-red-light sidebar-mini">
 <!-- Site Wrapper -->
 <div class="wrapper">
     <!-- BEGIN TEMPLATE header.php INCLUDE -->
