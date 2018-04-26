@@ -1,17 +1,3 @@
-<?php
-session_start();
-
-require 'databaseConnection.php';
-
-$dbConn = getConnection();
-$sql = "SELECT username FROM  UsersInfo";
-$stmt = $dbConn->prepare($sql);
-$stmt->execute();
-$result = $stmt->fetchAll();
-
-?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -45,7 +31,7 @@ $result = $stmt->fetchAll();
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Agent Rosters
+                Agent Roster
             </h1>
             <ol class="breadcrumb">
                 <li>Properties</li>
@@ -58,10 +44,75 @@ $result = $stmt->fetchAll();
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-body no-padding">
-                            <table id="roster-table" class="table" data-editing-always-show="true">
-
-
-                            </table>
+                          <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th data-breakpoints="xs">ID</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr data-expanded="true">
+                                            <td>1</td>
+                                            <td>Dennise</td>
+                                            <td>Fuhrman</td>
+                                            <td>dennise@demo.com</td>
+                                            <td>000-000-0000</td>
+                                    </tr>
+                                    <tr>
+                                            <td>2</td>
+                                            <td>Elodia</td>
+                                            <td>Weisz</td>
+                                            <td>elodia@demo.com</td>
+                                            <td>000-000-0000</td>     
+                                    </tr>
+                                    <tr>
+                                            <td>3</td>
+                                            <td>Raeann</td>
+                                            <td>Haner</td>
+                                            <td>raeann@demo.com</td>
+                                            <td>000-000-0000</td>     
+                                    </tr>
+                                    <tr>
+                                            <td>4</td>
+                                            <td>Junie</td>
+                                            <td>Landa</td>
+                                            <td>junie@demo.com</td>
+                                            <td>000-000-0000</td>     
+                                    </tr>
+                                    <tr>
+                                            <td>5</td>
+                                            <td>Solomon</td>
+                                            <td>Bittinger</td>
+                                            <td>solomon@demo.com</td>
+                                            <td>000-000-0000</td>     
+                                    </tr>
+                                    <tr>
+                                            <td>6</td>
+                                            <td>Bar</td>
+                                            <td>Lewis</td>
+                                            <td>bar@demo.com</td>
+                                            <td>000-000-0000</td>     
+                                    </tr>
+                                    <tr>
+                                            <td>7</td>
+                                            <td>Usha</td>
+                                            <td>Leak</td>
+                                            <td>usha@demo.com</td>
+                                            <td>000-000-0000</td>     
+                                    </tr>
+                                    <tr>
+                                            <td>8</td>
+                                            <td>Lorriane</td>
+                                            <td>Cooke</td>
+                                            <td>lorriane@demo.com</td>
+                                            <td>000-000-0000</td>     
+                                    </tr>
+                            </tbody>
+                        </table>
                         </div>
                         <!-- /.box-body -->
                     </div>
@@ -187,313 +238,9 @@ $result = $stmt->fetchAll();
 <script src="./dist/js/vendor/footable.min.js"></script>
 
 <script>
-
-    jQuery(function ($) {
-
-        var $modal = $('#editor-modal'),
-            $editor = $('#editor'),
-            $editorTitle = $('#editor-title');
-
-
-
-        // var ft = $('.table').footable({
-            var ft = FooTable.init('.table',{
-            "columns": $.ajax('columns.json', {dataType: 'json'}),
-            "rows": $.ajax('getAgentRosterRows.php', {dataType: 'json'}),
-            "filtering": {
-                "enabled": true
-            },
-            "sorting": {
-                "enabled": true
-            },
-            "paging": {
-                "enabled": true
-            },
-            "editing": {
-                "enabled": true,
-                "addRow": function () {
-                    $modal.removeData('row');
-                    $editor[0].reset();
-                    $editorTitle.text('Add a New Agent');
-                    $modal.modal('toggle');
-                },
-                "addText": '<i class="fa fa-user-plus"></i> Add New Agent',
-                "editRow": function (row) {
-                    var values = row.val();
-                    $editor.find('#firstName').val(values.firstName);
-                    $editor.find('#lastName').val(values.lastName);
-                    $editor.find('#phone').val(values.phone);
-                    $editor.find('#userId').val(values.userId);
-
-                    $editor.find('#license').val(values.license);
-                    $editor.find('#username').val(values.username);
-                    $editor.find('#email').val(values.email);
-
-                    $modal.data('row', row);
-                    $editorTitle.text('Edit ' + values.firstName + " " + values.lastName);
-                    $modal.modal('show');
-                },
-                "deleteRow": function (row) {
-                    var values = row.val();
-                    if (confirm('Are you sure you want to delete agent ' + values.firstName + " " + values.lastName + '?')) {
-                        $.post("AgentRosterFunction.php", {userId: values.userId, function: "delete"});
-                        row.delete();
-                    }
-                }
-            }
-        }), // table.footable
-
-        uid = 10;
-        $editor.on('submit', function (e) {
-            if (this.checkValidity && !this.checkValidity()) return;
-            e.preventDefault();
-
-
-            var row = $modal.data('row'),
-                values = {
-                    license: $editor.find('#license').val(),
-                    userId: $editor.find('#userId').val(),
-                    firstName: $editor.find('#firstName').val(),
-                    lastName: $editor.find('#lastName').val(),
-                    username: $editor.find('#username').val(),
-                    password: $editor.find('#password').val(),
-                    email: $editor.find('#email').val(),
-                    phone: $editor.find('#phone').val(),
-
-                };
-
-            var editValues = JSON.stringify(values);
-            editValues = JSON.parse(editValues);
-
-
-            if (row instanceof FooTable.Row) {
-                $.post("AgentRosterFunction.php", {
-                    userId: editValues.userId,
-                    license: editValues.license,
-                    firstName: editValues.firstName,
-                    lastName: editValues.lastName,
-                    username: editValues.username,
-                    email: editValues.email,
-                    phone: editValues.phone,
-                    function: "edit"
-                });
-                row.val(values);
-            } else {
-                $.post("AgentRosterFunction.php", {
-                    userId: editValues.userId,
-                    license: editValues.license,
-                    firstName: editValues.firstName,
-                    lastName: editValues.lastName,
-                    username: editValues.username,
-                    password: editValues.password,
-                    email: editValues.email,
-                    phone: editValues.phone,
-                    function: "add"
-                });
-                $.post("emailNewAgent.php", {
-                    username: editValues.username,
-                    email: editValues.email,
-                    password: editValues.password
-                });
-                // values.id = uid++;
-                ft.rows.add(values);
-                alert("Agent Added");
-            }
-            $modal.modal('hide');
-            $(".modal-content form-horizontal").hide();
-            header('Location: http://jjp2017.org/agent-roster.php');
-            die();
-        });
-    }); // jquery
-
-
-
-//
-//
-//    var $modal = $('#editor-modal'),
-//        $editor = $('#editor'),
-//        $editorTitle = $('#editor-title'),
-//        ft = FooTable.init('#roster-table', {
-//            "columns": $.ajax('columns.json', {dataType: 'json'}),
-//            "rows": $.ajax('getAgentRosterRows.php', {dataType: 'json'}),
-//            "filtering": {
-//                "enabled": true
-//            },
-//            "sorting": {
-//                "enabled": true
-//            },
-//            editing: {
-//                enabled: true,
-//                addRow: function () {
-//                    $modal.removeData('row');
-//                    $editor[0].reset();
-//                    $editorTitle.text('Add a New Agent');
-//                    $modal.modal('show');
-//                },
-//                editRow: function (row) {
-//                    var values = row.val();
-//                    $editor.find('#firstName').val(values.firstName);
-//                    $editor.find('#lastName').val(values.lastName);
-//                    $editor.find('#phone').val(values.phone);
-//                    $editor.find('#userId').val(values.userId);
-//
-//                    $editor.find('#license').val(values.license);
-//                    $editor.find('#username').val(values.username);
-//                    $editor.find('#email').val(values.email);
-//
-//                    $modal.data('row', row);
-//                    $editorTitle.text('Edit ' + values.firstName + " " + values.lastName);
-//                    $modal.modal('show');
-//                },
-//                deleteRow: function (row) {
-//                    var values = row.val();
-//                    if (confirm('Are you sure you want to delete agent ' + values.firstName + " " + values.lastName + '?')) {
-//                        $.post("AgentRosterFunction.php", {userId: values.userId, function: "delete"});
-//                        row.delete();
-//                    }
-//
-//                }
-//            }
-//        }),
-//        uid = 10;
-//
-//    $editor.on('submit', function (e) {
-//        if (this.checkValidity && !this.checkValidity()) return;
-//        e.preventDefault();
-//        var row = $modal.data('row'),
-//            values = {
-//                license: $editor.find('#license').val(),
-//                userId: $editor.find('#userId').val(),
-//                firstName: $editor.find('#firstName').val(),
-//                lastName: $editor.find('#lastName').val(),
-//                username: $editor.find('#username').val(),
-//                password: $editor.find('#password').val(),
-//                email: $editor.find('#email').val(),
-//                phone: $editor.find('#phone').val(),
-//
-//            };
-//        var editValues = JSON.stringify(values);
-//        editValues = JSON.parse(editValues);
-//        if (row instanceof FooTable.Row) {
-//            $.post("AgentRosterFunction.php", {
-//                userId: editValues.userId,
-//                license: editValues.license,
-//                firstName: editValues.firstName,
-//                lastName: editValues.lastName,
-//                username: editValues.username,
-//                email: editValues.email,
-//                phone: editValues.phone,
-//                function: "edit"
-//            });
-//            row.val(values);
-//        } else {
-//            $.post("AgentRosterFunction.php", {
-//                userId: editValues.userId,
-//                license: editValues.license,
-//                firstName: editValues.firstName,
-//                lastName: editValues.lastName,
-//                username: editValues.username,
-//                password: editValues.password,
-//                email: editValues.email,
-//                phone: editValues.phone,
-//                function: "add"
-//            });
-//            values.id = uid++;
-//            ft.rows.add(values);
-//        }
-//        $modal.modal('hide');
-//    });
-
-    //generate random password
-    function generatePassword() {
-        var length = 6;
-        var characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        var password = "";
-        for (var i = 0, n = characters.length; i < length; ++i) {
-            password += characters.charAt(Math.floor(Math.random() * n));
-        }
-        return password;
-    }
-
-    //WORKING ON CHECKING IF USERNAME IS NOT ALREADY TAKEN IF NOT ADD A VARIBLE TO HAVE IT AVAILABLE
-    /*function checkIfAvailableUsername(proposedUsername) {
-        var availableUsername = false;
-        jQuery.ajax({
-                type: "get",
-                url: "verifyUsernameAvailability.php",
-                dataType: "json",
-                data: {"proposedUsername": proposedUsername},
-                success: function(data,status) {
-                    alert(data['exists']);
-                    //proposed username does not exist and therefore we can move forward
-                    if(!data['exists']) {
-                        availableUsername = true;
-                    }
-                },
-                complete: function(data,status) { //optional, used for debugging purposes
-                      alert(status);
-                }
-            });
-
-         return availableUsername;
-
-    }
-
-    function addCharacter(proposedUsername) {
-        characters = "0123456789";
-        proposedUsername += characters.charAt(Math.floor(Math.random() * characters.length));
-        return proposedUsername;
-    }*/
-
-    function getLicense() {
-        lic = document.getElementById("license").value;
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                var response = JSON.parse(xhr.responseText);
-                xhr.abort();
-                //console.log(response.name);
-                // var firstN = response.name.split(" ");
-                // var cleanlastN = firstN[0].split(",");
-
-                // document.getElementById("firstName").value = firstN[1];
-                // document.getElementById("lastName").value = cleanlastN[0];
-                var dateIssued = response.lic;
-                var dateExpire = response.expirationDate;
-                var dateExpireSplit = dateExpire.split("/");
-                var dateExpireFormat = "20" + dateExpireSplit[2] + "-" + dateExpireSplit[0] + "-" + dateExpireSplit[1];
-                var today = new Date();
-                today.setHours(0, 0, 0, 0);
-                if (Date.parse(dateExpireFormat) <= today) {
-                    alert("Invalid license");
-                }
-                else {
-                    alert("Valid license");
-                }
-                var firstName = response.name.split(",");
-                document.getElementById("firstName").value = firstName[1];
-                document.getElementById("lastName").value = firstName[0];
-                document.getElementById("issuedDate").value = dateIssued;
-                document.getElementById("expirationDate").value = dateExpire;
-
-                //check if username is already taken
-                var proposedUsername =  firstName[0].substring(0, 1) + firstName[0].substring(0, 4);
-                /*var available = false;
-
-                while(!available){
-                    available = checkIfAvailableUsername(proposedUsername);
-                    proposedUsername = addCharacter(proposedUsername);
-                    //alert(available);
-                }*/
-
-                document.getElementById("username").value = proposedUsername;
-                document.getElementById("password").value = generatePassword();
-            }
-
-        }
-        xhr.open("GET", "scriptToGetAgentInfo.php?license=" + lic, true);
-        xhr.send();
-    }
+jQuery(function($){
+	$('.table').footable();
+});
 </script>
 </body>
 

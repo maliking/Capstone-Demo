@@ -1,65 +1,32 @@
-<!-- Sidebar -->
+
+<!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
     <!-- Sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <a href="index.php" class="logo">
             <!-- Logo -->
-            <img class="img-responsive" src="../dist/img/remax-logo.png"> </a>
+            <img class="img-responsive" src="../dist/img/remax-logo.png">
+        </a>
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">OVERVIEW</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li><a href="./index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-<!--
-            <li><a href="../agent/openhouse/listings-openhouse.php"><i class="fa fa-home"></i>
-                    <span>Open House</span></a></li>
--->
-            <li><a href="../agent/my-calendar.php"><i class="fa fa-calendar"></i>
-                    <span>My Appointments</span></a></li>
-
-             <li><a href="../agent/visitors.php"><i class="fa fa-address-book-o"></i>
-                    <span>My Visitors/Leads</span></a></li>
-
-            <li class="header-style treeview">
-                <a href="#"><span class="header-color">PROPERTIES</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                      </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a class="dropdown-text" href="my-inventory.php"><i class="fa fa-home"></i>
-                            <span>My Inventory</span></a></li>
-                    <li><a class="dropdown-text" href="office-inventory.php"><i class="fa fa-building"></i> <span>Office Inventory</span></a>
-                    </li>
-                    <li><a class="dropdown-text" href="inputNewListing.php"><i class="fa fa-upload"></i> <span>Input New  Listing</span></a>
-                    </li>
-                </ul>
-            </li>
-            <!-- <li class="header-style treeview">
-                <a href="#"><span class="header-color">TRANSACTIONS</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                      </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="salesBreakdown.php"><i class="fa fa-list-alt"></i> <span>Sales Breakdown</span></a></li>
-                    <li><a href="monthlyReport.php"><i class="fa fa-file-text-o"></i> <span>Monthly Report</span></a></li>
-                    <li><a href="pastSales.php"><i class="fa fa-archive"></i> <span>Past Sales</span></a></li>
-                </ul>
-            </li> -->
-            <!-- <li class="header-style treeview">
-                <a href="#"><span class="header-color">STATISTICS</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                      </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="analytics.php"><i class="fa fa-line-chart"></i> <span> Analytics</span></a></li>
-                    <li><a href="myEarnings.php"><i class="fa fa-money"></i> <span>My Earnings</span></a></li>
-                </ul>
-            </li> -->
+            <li class="<?= ($activePage == 'index') ? 'active':''; ?>"><a href="index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li class="<?= ($activePage == 'agent-roster') ? 'active':''; ?>"><a href="agent-roster.php"><i class="fa fa-users"></i> <span>Agent Roster</span></a></li>
+            <li class="header">PROPERTIES</li>
+            <li class="<?= ($activePage == 'inventory') ? 'active':''; ?>"><a href="inventory.php"><i class="fa fa-home"></i> <span>Office Inventory</span></a></li>
+            <li><a href="../agent/my-calendar.php"><i class="fa fa-calendar"></i> <span>My Appointments</span></a></li>
+            <li><a href="../agent/visitors.php"><i class="fa fa-address-book-o"></i> <span>My Visitors/Leads</span></a></li>
+            <li class="header">TRANSACTIONS</li>
+            <li class="<?= ($activePage == 'sales-breakdown') ? 'active':''; ?>"><a href="sales-breakdown.php"><i class="fa fa-list-alt"></i> <span> Sales Breakdown</span></a></li>
+            <li class="<?= ($activePage == 'monthly-report') ? 'active':''; ?>"><a href="monthly-report.php"><i class="fa fa-line-chart"></i> <span>Monthly Report</span></a></li>
+            <li class="<?= ($activePage == 'c_sheet') ? 'active':''; ?>"><a href="c_sheet.php"><i class="fa fa-file-text-o"></i> <span>Commission Sheet</span></a></li>
+            <!-- <li class="<?= ($activePage == 'c_sheetReferral') ? 'active':''; ?>"><a href="c_sheetReferral.php"><i class="fa fa-file-text-o"></i> <span>Commission Sheet (Referral)</span></a></li> -->
+            <!-- <li class="header">STATISTICS</li> -->
+            <!-- <li class="<?= ($activePage == 'analytics') ? 'active':''; ?>"><a href="analytics.php"><i class="fa fa-line-chart"></i> <span> Analytics</span></a></li> -->
         </ul>
         <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
 </aside>
+
+

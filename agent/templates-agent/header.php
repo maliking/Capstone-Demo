@@ -1,16 +1,6 @@
 <?php
 
-if ($_SESSION['userId'] == "100" || $_SESSION['userId'] == "34") //Jorge
-{
-    $_SESSION['userId'] = "34";
-    $_SESSION['userType'] = "1";
-}
-else if($_SESSION['userId'] == "101" || $_SESSION['userId'] == "37" ) //Juan
-{
-    $_SESSION['userId'] = "37";
-    $_SESSION['userType'] = "1";
-}
-$currAgent = "SELECT * FROM UsersInfo WHERE userId = '" . $_SESSION['userId'] . "'";
+$currAgent = "SELECT * FROM UsersInfo WHERE userId = 34";
 $email = $dbConn->prepare($currAgent);
 $email->execute();
 $agentInfo = $email->fetch();
@@ -20,7 +10,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 $sqlLicense = "SELECT license, mlsId FROM UsersInfo WHERE userId = :userId";
 
 $namedParameters = array();
-$namedParameters[':userId'] = $_SESSION['userId'];
+$namedParameters[':userId'] = 34;
 
 
 $licenseStmt = $dbConn->prepare($sqlLicense);
@@ -61,7 +51,7 @@ $prevYearResult = $prevYearStmt->fetch();
 
 $addedHouses = "SELECT count(*) as added FROM HouseInfo WHERE userId = :userId AND status = :status";
 $addedHouseParam = array();
-$addedHouseParam[':userId'] = $_SESSION['userId'];
+$addedHouseParam[':userId'] = 34;
 $addedHouseParam[':status'] = "added";
 
 $addedHousesStmt = $dbConn->prepare($addedHouses);
@@ -81,7 +71,7 @@ $result = $stmt->fetch();
 
 $sqlTransactions = "SELECT * FROM transactions WHERE userId = :userId";
 $transParameters = array();
-$transParameters[':userId'] = $_SESSION['userId'];
+$transParameters[':userId'] = 34;
 $transStmt = $dbConn->prepare($sqlTransactions);
 $transStmt->execute($transParameters);
 $transResults = $transStmt->fetchAll();
@@ -153,23 +143,6 @@ foreach ($resultGross as $gross) {
             <span class="sr-only">Toggle navigation</span>
         </a>
 
-        <!-- Temporary button for easy switching -->
-        <?php
-            if ($_SESSION['userId'] == "100" || $_SESSION['userId'] == "34") //Jorge
-            {
-                $_SESSION['userId'] = "34";
-                $_SESSION['userType'] = "1";
-                echo "<a href=\"../index.php\" style=\"margin-top: 8px; margin-left: 10px\" class=\"btn
-                btn-admin\">Switch to Admin</a>";
-            }
-            else if($_SESSION['userId'] == "101" || $_SESSION['userId'] == "37" ) //Juan
-            {
-                $_SESSION['userId'] = "37";
-                $_SESSION['userType'] = "1";
-                echo "<a href=\"../index.php\" style=\"margin-top: 8px; margin-left: 10px\" class=\"btn
-                btn-admin\">Switch to Admin</a>";
-            }
-        ?>
 
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">

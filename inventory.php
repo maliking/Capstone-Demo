@@ -1,23 +1,15 @@
 <?php
-// session_start();
-
-// require 'databaseConnection.php';
-
-// $dbConn = getConnection();
-// $sql = "SELECT * FROM HouseInfo";
-// $stmt = $dbConn->prepare($sql);
-// $stmt->execute();
-// $result = $stmt->fetchAll();
-
-session_start();
-
-if (!isset($_SESSION['userId'])) {
-    header("Location: http://oversite.maliking.com/login.php");
-}
 
 require 'databaseConnection.php';
+
 $dbConn = getConnection();
-// $dbConn = getConnection();
+$sql = "SELECT * FROM HouseInfo";
+$stmt = $dbConn->prepare($sql);
+$stmt->execute();
+$result = $stmt->fetchAll();
+
+
+
 // $sql = "SELECT address, city, state, zip FROM  HouseInfo";
 // $stmt = $dbConn->prepare($sql);
 // $stmt->execute();
