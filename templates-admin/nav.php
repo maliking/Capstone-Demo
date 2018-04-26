@@ -12,8 +12,6 @@
             <li class="<?= ($activePage == 'agent-roster') ? 'active':''; ?>"><a href="agent-roster.php"><i class="fa fa-users"></i> <span>Agent Roster</span></a></li>
             <li class="header">PROPERTIES</li>
             <li class="<?= ($activePage == 'inventory') ? 'active':''; ?>"><a href="inventory.php"><i class="fa fa-home"></i> <span>Office Inventory</span></a></li>
-            <li class="<?= ($activePage == 'coming-soon') ? 'active':''; ?>"><a href="coming-soon.php"><i class="fa fa-flag"></i> <span>Coming Soon</span></a></li>
-            <li class="<?= ($activePage == 'past-sales') ? 'active':''; ?>"><a href="past-sales.php"><i class="fa fa-archive"></i> <span>Past Sales</span></a></li>
             <li class="header">TRANSACTIONS</li>
             <li class="<?= ($activePage == 'sales-breakdown') ? 'active':''; ?>"><a href="sales-breakdown.php"><i class="fa fa-list-alt"></i> <span> Sales Breakdown</span></a></li>
             <li class="<?= ($activePage == 'monthly-report') ? 'active':''; ?>"><a href="monthly-report.php"><i class="fa fa-line-chart"></i> <span>Monthly Report</span></a></li>
