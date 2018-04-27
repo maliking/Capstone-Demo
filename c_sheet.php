@@ -118,7 +118,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-9">
                     <div class="box">
                         <div class="box-header">
                             <h4>Commission Sheet Breakdown</h4>

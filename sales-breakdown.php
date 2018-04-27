@@ -60,7 +60,7 @@ $result = $stmt->fetchAll();
                                 <tr>
                                     <th>Date Settled</th>
                                     <th>Property Address</th>
-                                    <th>Agent</th>
+                                   
                                     <th>Total</th>
                                     <th data-breakpoints="all">Office</th>
                                     <th data-breakpoints="all">E&O <a href="#" data-toggle="tooltip"
@@ -73,7 +73,7 @@ $result = $stmt->fetchAll();
                                     <th>Commission</th>
                                     <th data-breakpoints="all">Client</th>
                                     <th>Price</th>
-                                    <th>Listing/Buyer</th>
+                                    <th>Client</th>
                                     <th data-breakpoints="all">Notes</th>
                                     <th data-breakpoints="all">Commission Sheet</th>
                                 </tr>
@@ -84,7 +84,7 @@ $result = $stmt->fetchAll();
                                     echo "<tr>";
                                     echo "<td>" . date("m-d-Y", strtotime($sales['settlementDate'])) . "</td>";
                                     echo "<td>" . $sales['address'] . "</td>";
-                                    echo "<td>" . $sales['firstName'] . " " . $sales['lastName'] . "</td>";
+                                   
                                     echo "<td>" . '$' . number_format($sales['InitialGross'], 0) . "</td>"; //Total
                                     echo "<td>" . '$' . number_format($sales['brokerFee'], 0) . "</td>"; //office
                                     echo "<td>" . '$99.00' . "</td>"; //eo
@@ -96,7 +96,7 @@ $result = $stmt->fetchAll();
                                     echo "<td>" . $sales['clients'] . "</td>"; //client
                                     echo "<td>" . '$' . number_format($sales['finalHousePrice'], 0) . "</td>"; //price
                                     echo "<td>" . $sales['clients'] . "</td>"; //listing buyer
-                                    echo "<td>" . $sales['notes'] . "</td>"; //notes
+                                    echo "<td>" .  "</td>"; //notes
                                     echo '<td> <a href="viewCommissionSheet.php?comm=' . $sales['commId'] . '" target="_blank"> <button>View Commission Sheet</button> </a> </td>';
                                     echo "</tr>";
                                 }

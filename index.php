@@ -240,7 +240,7 @@ date_default_timezone_set('America/Los_Angeles');
                                 </div>
                                 <div class="box-body">
                                     <div class="chart">
-                                        <canvas id="barChart" style="height:230px"></canvas>
+                                        <canvas id="myChart" width="400" height="400"></canvas>
                                     </div>
                                 </div>
                                 <!-- /.box-body -->
@@ -334,6 +334,45 @@ date_default_timezone_set('America/Los_Angeles');
     });
 
 </script>
+<script>
+    new Chart(document.getElementById("myChart"),
+        {
+            "type": "line",
+       
+            
+            "data": {
+                        "labels": ["January","February","March","April","May","June","July"],
+                        "datasets": [{
+                            "label": "2018",
+                            "data":[32834,43292,32395,49323,46953,55023,39432],
+                            "backgroundColor": "rgb(127, 127, 127,0.4)",
+                            "borderColor":"rgb(127, 127, 127)",
+                            "lineTension":0.1
+                        },{
+                            "label": "2017",
+                            "data":[35782,39234,30043,33944,47912,60934,30453],
+                            "fill":true,
+                            "backgroundColor":"rgb(75, 192, 192,0.4)",
+                            "borderColor":"rgb(75, 192, 192)",
+                            "lineTension":0.1
+                        }]
+                    },
+            "options":{
+               scales: {
+                   
+            yAxes: [{
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        return '$' + value;
+                    }
+                }
+            }]
+        } 
+        
+            }});
+        </script>
+        
 
 
 

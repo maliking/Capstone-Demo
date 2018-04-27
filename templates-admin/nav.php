@@ -8,6 +8,7 @@
         </a>
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
+            <li class="header">OVERVIEW</li>
             <li class="<?= ($activePage == 'index') ? 'active':''; ?>"><a href="index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             <li class="<?= ($activePage == 'agent-roster') ? 'active':''; ?>"><a href="agent-roster.php"><i class="fa fa-users"></i> <span>Agent Roster</span></a></li>
             <li class="header">PROPERTIES</li>
