@@ -1,5 +1,4 @@
 <?php
-
 require 'databaseConnection.php';
 
 $dbConn = getConnection();
@@ -51,139 +50,126 @@ $keys = array_keys($response);
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>RE/MAX Salinas | Inventory</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RE/MAX Salinas | Inventory</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <!-- BEGIN TEMPLATE default-css.php INCLUDE -->
-    <?php include "./templates-admin/default-css.php" ?>
-    <!-- END TEMPLATE default-css.php INCLUDE -->
+        <!-- BEGIN TEMPLATE default-css.php INCLUDE -->
+        <?php include "./templates-admin/default-css.php" ?>
+        <!-- END TEMPLATE default-css.php INCLUDE -->
 
-    <!-- PAGE-SPECIFIC CSS -->
-    <link rel="stylesheet" href="dist/css/vendor/footable.bootstrap.min.css">
-</head>
+        <!-- PAGE-SPECIFIC CSS -->
+        <link rel="stylesheet" href="dist/css/vendor/footable.bootstrap.min.css">
+    </head>
 
-<body class="hold-transition skin-red-light sidebar-mini">
-<!-- Site Wrapper -->
-<div class="wrapper">
-    <!-- BEGIN TEMPLATE header.php INCLUDE -->
-    <?php include "./templates-admin/header.php" ?>
-    <!-- END TEMPLATE header.php INCLUDE -->
+    <body class="hold-transition skin-red-light sidebar-mini">
+        <!-- Site Wrapper -->
+        <div class="wrapper">
+            <!-- BEGIN TEMPLATE header.php INCLUDE -->
+            <?php include "./templates-admin/header.php" ?>
+            <!-- END TEMPLATE header.php INCLUDE -->
 
-    <!-- BEGIN TEMPLATE nav.php INCLUDE -->
-    <?php include "./templates-admin/nav.php" ?>
-    <!-- END TEMPLATE nav.php INCLUDE -->
+            <!-- BEGIN TEMPLATE nav.php INCLUDE -->
+            <?php include "./templates-admin/nav.php" ?>
+            <!-- END TEMPLATE nav.php INCLUDE -->
 
-    <!-- Content Wrapper -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Current Inventory
-            </h1>
-            <ol class="breadcrumb">
-                <li>Properties</li>
-                <li class="active"><a href="#"><i class="fa fa-archive"></i> Current Inventory</a></li>
-            </ol>
-        </section>
-        <!-- Main content -->
-        <section class="content">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="box">
-                        <div class="box-body">
-                             <table class="table table-bordered table-striped" id="inventory-table">
-                                <thead>
+            <!-- Content Wrapper -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Current Inventory
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>Properties</li>
+                        <li class="active"><a href="#"><i class="fa fa-archive"></i> Current Inventory</a></li>
+                    </ol>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-body">
+                                    <table class="table table-bordered table-striped" id="inventory-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Property</th>
+                                                <th>Bedroom</th>
+                                                <th>Bathroom</th>
+                                                <th>Price</th>
+                                                <th>House Images</th>
+                                                <th>Map</th>
+                                            </tr>
+                                        </thead>
+                                        <?php
+                                        // foreach ($result as $house) {
+                                        for ($i = 0; $i < sizeof($keys); $i++) {
+                                            $agentName = "SELECT firstName, lastName FROM UsersInfo WHERE mlsId = :mlsId";
+                                            $namedParameters = array();
+                                            $namedParameters[':mlsId'] = $response[$keys[$i]]['listingAgentID'];
+                                            $stmt = $dbConn->prepare($agentName);
+                                            $stmt->execute($namedParameters);
+                                            $name = $stmt->fetch();
 
+                                            if (!isset($response[$keys[$i]]['bedrooms'])) {
+                                                $bedrooms = "0";
+                                            } else {
+                                                $bedrooms = $response[$keys[$i]]['bedrooms'];
+                                            }
+                                            if (!isset($response[$keys[$i]]['totalBaths'])) {
+                                                $bathrooms = "0";
+                                            } else {
+                                                $bathrooms = $response[$keys[$i]]['totalBaths'];
+                                            }
 
-                                <tr>
-                                    <th>Agent</th>
-                                    <th>Property</th>
-                                    <th>Bedroom</th>
-                                    <th>Bathroom</th>
-                                    <th>Price</th>
-                                    <th>House Images</th>
-                                    <th>Map</th>
-
-                                </tr>
-                                </thead>
-                                <?php
-                                // foreach ($result as $house) {
-                                for ($i = 0; $i < sizeof($keys); $i++) {
-
-
-                                        $agentName = "SELECT firstName, lastName FROM UsersInfo WHERE mlsId = :mlsId";
-                                        $namedParameters = array();
-                                        $namedParameters[':mlsId'] = $response[$keys[$i]]['listingAgentID'];
-                                        $stmt = $dbConn->prepare($agentName);
-                                        $stmt->execute($namedParameters);
-                                        $name = $stmt->fetch();
-
-                                        if(!isset($response[$keys[$i]]['bedrooms']))
-                                        {
-                                            $bedrooms = "0";
-                                        }
-                                        else
-                                        {
-                                            $bedrooms = $response[$keys[$i]]['bedrooms'];
-                                        }
-                                        if(!isset($response[$keys[$i]]['totalBaths']))
-                                        {
-                                            $bathrooms = "0";
-                                        }
-                                        else
-                                        {
-                                            $bathrooms = $response[$keys[$i]]['totalBaths'];
-                                        }
-
-                                        echo '<tbody><tr><td> ' . $name['firstName'] . " " . $name['lastName'] .  '</td>
-                                                    <td> ' . $response[$keys[$i]]['address'] . " " . $response[$keys[$i]]['cityName'] . ", " . $response[$keys[$i]]['state'] . " " . $response[$keys[$i]]['zipcode'] .  ' </td>
+                                            echo '<tbody><tr><td> ' . $name['firstName'] . " " . $name['lastName'] . '</td>
+                                                    <td> ' . $response[$keys[$i]]['address'] . " " . $response[$keys[$i]]['cityName'] . ", " . $response[$keys[$i]]['state'] . " " . $response[$keys[$i]]['zipcode'] . ' </td>
                                                     <td>' . $bedrooms . '</td>
-                                                    <td>'. $bathrooms .'</td>
-                                                    <td>'.$response[$keys[$i]]['listingPrice'] .'</td>
+                                                    <td>' . $bathrooms . '</td>
+                                                    <td>' . $response[$keys[$i]]['listingPrice'] . '</td>
                                                     <td ><a href="viewHouseImages.php?id=' . $response[$keys[$i]]['listingID'] . '" target="_blank"><button >View</button></a></td>
 
                                                     <td ><a href="https://maps.google.com/?q=' . $response[$keys[$i]]['address'] . " " . $response[$keys[$i]]['cityName'] . ", " . $response[$keys[$i]]['state'] . " " . $response[$keys[$i]]['zipcode'] . '" target="_blank"><button >View on Map</button></a></td>
 
                                                 </tr></tbody>';
+                                        }
+                                        ?>
 
-                                }
-                                ?>
-
-                            </table>
+                                    </table>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
                         </div>
-                        <!-- /.box-body -->
+                        <!-- /.col -->
                     </div>
-                    <!-- /.box -->
-                </div>
-                <!-- /.col -->
+                    <!-- /.row -->
+                </section>
+                <!-- /.content -->
             </div>
-            <!-- /.row -->
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-</div>
-<!-- /.wrapper -->
+            <!-- /.content-wrapper -->
+        </div>
+        <!-- /.wrapper -->
 
-<!-- BEGIN TEMPLATE default-footer.php INCLUDE -->
+        <!-- BEGIN TEMPLATE default-footer.php INCLUDE -->
 <?php include "./templates-admin/default-footer.php" ?>
-<!-- END TEMPLATE default-footer.php INCLUDE -->
+        <!-- END TEMPLATE default-footer.php INCLUDE -->
 
-<!-- BEGIN TEMPLATE default-js.php INCLUDE -->
+        <!-- BEGIN TEMPLATE default-js.php INCLUDE -->
 <?php include "./templates-admin/default-js.php" ?>
-<!-- END TEMPLATE default-js.php INCLUDE -->
+        <!-- END TEMPLATE default-js.php INCLUDE -->
 
-<script type="text/javascript" src="dist/js/vendor/footable.min.js"></script>
-<script>
+        <script type="text/javascript" src="dist/js/vendor/footable.min.js"></script>
+        <script>
 
-    jQuery(function ($) {
-        $('.table').footable();
-    });
+            jQuery(function ($) {
+                $('.table').footable();
+            });
 
-</script>
-</body>
+        </script>
+    </body>
 
 </html>

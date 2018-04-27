@@ -1,7 +1,9 @@
 <?php
-function getConnection()
-{
+
+function getConnection() {
+
     //database login credentials
+
     $host = "localhost";
     $dbname = "markiepe_test";
     $username = "root";
@@ -21,18 +23,25 @@ function getConnection()
 }
 
 //used to UPDATE, INSERT, and SELECT statements for database
-function sendQuery($sql, $namedParameters)
-{
+
+function sendQuery($sql, $namedParameters) {
+
     $dbConn = getConnection();
+
     $stmt = $dbConn->prepare($sql);
+
     if ($namedParameters != null) {
+
         $stmt->execute($namedParameters);
     } else {
+
         $stmt->execute();
     }
+
     if (strtoupper(strtok($sql, " ")) == "SELECT") {
+
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
-
 ?>
+

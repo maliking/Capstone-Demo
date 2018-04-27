@@ -103,6 +103,7 @@ $result = $stmt->fetchAll();
     new Chart(document.getElementById("myChart"),
         {
             "type": "line",
+       
             
             "data": {
                         "labels": ["January","February","March","April","May","June","July"],
