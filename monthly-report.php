@@ -55,7 +55,7 @@ $result = $stmt->fetchAll();
                     <div class="box">
 
                         <div class="box-body">
-                            <canvas id="myChart" width="400" height="400"></canvas>
+                            <canvas id="myLineChart" width="400" height="300"></canvas>
                         </div>
                         <!-- /.box-body -->
                     </div>
@@ -65,7 +65,7 @@ $result = $stmt->fetchAll();
                     <div class="box">
 
                         <div class="box-body">
-                            <canvas id="myChart" width="400" height="400"></canvas>
+                            <canvas id="myChart" width="400" height="300"></canvas>
                         </div>
                         <!-- /.box-body -->
                     </div>
@@ -75,7 +75,7 @@ $result = $stmt->fetchAll();
                     <div class="box">
 
                         <div class="box-body">
-                            <canvas id="myChart" width="400" height="400"></canvas>
+                            <canvas id="myChart" width="400" height="300"></canvas>
                         </div>
                         <!-- /.box-body -->
                     </div>
@@ -100,7 +100,7 @@ $result = $stmt->fetchAll();
 <!-- PAGE-SPECIFIC JS -->
 <script src="dist/js/vendor/Chart.bundle.min.js"></script>
 <script>
-    new Chart(document.getElementById("myChart"),
+    new Chart(document.getElementById("myLineChart"),
         {
             "type": "line",
        

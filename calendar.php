@@ -49,11 +49,11 @@ date_default_timezone_set('America/Los_Angeles');
             <div class="box-body">
               <!-- the events -->
               <div id="external-events">
-                <div class="external-event bg-green">Lunch</div>
-                <div class="external-event bg-yellow">Go home</div>
-                <div class="external-event bg-aqua">Do homework</div>
-                <div class="external-event bg-light-blue">Work on UI design</div>
-                <div class="external-event bg-red">Sleep tight</div>
+                <div class="external-event bg-green">Staff Meeting</div>
+                <div class="external-event bg-yellow">Inspection Due</div>
+                <div class="external-event bg-aqua">Close of Escrow (COE) Due</div>
+                <div class="external-event bg-light-blue">Approval Due</div>
+                <div class="external-event bg-red">Contingency Due</div>
                 <div class="checkbox">
                   <label for="drop-remove">
                     <input type="checkbox" id="drop-remove">
@@ -185,35 +185,42 @@ date_default_timezone_set('America/Los_Angeles');
       //Random default events
       events    : [
         {
-          title          : 'All Day Event',
+          title          : 'Pay Day',
           start          : new Date(y, m, 1),
           backgroundColor: '#f56954', //red
           borderColor    : '#f56954' //red
         },
         {
-          title          : 'Long Event',
+          title          : 'Hawaii Vacation',
           start          : new Date(y, m, d - 5),
           end            : new Date(y, m, d - 2),
           backgroundColor: '#f39c12', //yellow
           borderColor    : '#f39c12' //yellow
         },
         {
-          title          : 'Meeting',
+          title          : 'Staff Meeting',
           start          : new Date(y, m, d, 10, 30),
           allDay         : false,
-          backgroundColor: '#0073b7', //Blue
-          borderColor    : '#0073b7' //Blue
+          backgroundColor: '#00c0ef', //Blue
+          borderColor    : '#00c0ef' //Blue
         },
         {
-          title          : 'Lunch',
+          title          : 'Staff Meeting',
+          start          : new Date(y, m, d - 18, 10, 30),
+          allDay         : false,
+          backgroundColor: '#00c0ef', //Blue
+          borderColor    : '#00c0ef' //Blue
+        },
+        {
+          title          : 'Call Lucy L.',
           start          : new Date(y, m, d, 12, 0),
           end            : new Date(y, m, d, 14, 0),
           allDay         : false,
-          backgroundColor: '#00c0ef', //Info (aqua)
+          backgroundColor: '#00a65a', //Info (aqua)
           borderColor    : '#00c0ef' //Info (aqua)
         },
         {
-          title          : 'Birthday Party',
+          title          : 'Call Emma E.',
           start          : new Date(y, m, d + 1, 19, 0),
           end            : new Date(y, m, d + 1, 22, 30),
           allDay         : false,
@@ -221,10 +228,37 @@ date_default_timezone_set('America/Los_Angeles');
           borderColor    : '#00a65a' //Success (green)
         },
         {
-          title          : 'Click for Google',
-          start          : new Date(y, m, 28),
-          end            : new Date(y, m, 29),
-          url            : 'http://google.com/',
+          title          : 'Call Jason M.',
+          start          : new Date(y, m, d - 11, 12, 0),
+          end            : new Date(y, m, d - 11, 12, 0),
+          backgroundColor: '#3c8dbc', //Primary (light-blue)
+          borderColor    : '#3c8dbc' //Primary (light-blue)
+        },
+        {
+          title          : 'Call Daniel Y.',
+          start          : new Date(y, m, d - 10, 8, 30),
+          end            : new Date(y, m, d - 10, 9, 0),
+          backgroundColor: '#3c8dbc', //Primary (light-blue)
+          borderColor    : '#3c8dbc' //Primary (light-blue)
+        },
+        {
+          title          : 'Call Missy Y.',
+          start          : new Date(y, m, d - 15, 12, 0),
+          end            : new Date(y, m, d - 15, 12, 0),
+          backgroundColor: '#3c8dbc', //Primary (light-blue)
+          borderColor    : '#3c8dbc' //Primary (light-blue)
+        },
+        {
+          title          : 'Call Edward B.',
+          start          : new Date(y, m, d - 14, 8, 0),
+          end            : new Date(y, m, d - 14, 8, 30),
+          backgroundColor: '#3c8dbc', //Primary (light-blue)
+          borderColor    : '#3c8dbc' //Primary (light-blue)
+        },
+        {
+          title          : 'Call Simon B.',
+          start          : new Date(y, m, d - 10, 12, 0),
+          end            : new Date(y, m, d - 10, 12, 0),
           backgroundColor: '#3c8dbc', //Primary (light-blue)
           borderColor    : '#3c8dbc' //Primary (light-blue)
         }
