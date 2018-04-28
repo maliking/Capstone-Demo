@@ -17,9 +17,9 @@
                         <span class="hidden-xs">Demo User</span> </a>
                     <ul class="dropdown-menu">
                         <!-- User image in the menu -->
-                        <li class="user-header"><img src="">
+                        <li class="user-header"><img src="dist/img/demo-usr.jpg">
                             <p> Demo User
-                                <small>Member since Nov. 2012</small>
+                                <small>Capstone 2018</small>
                             </p>
                         </li>
 

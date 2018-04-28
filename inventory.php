@@ -5,46 +5,7 @@ $dbConn = getConnection();
 $sql = "SELECT * FROM HouseInfo";
 $stmt = $dbConn->prepare($sql);
 $stmt->execute();
-$result = $stmt->fetchAll();
-
-
-
-// $sql = "SELECT address, city, state, zip FROM  HouseInfo";
-// $stmt = $dbConn->prepare($sql);
-// $stmt->execute();
-// $result = $stmt->fetchAll();
-$url = 'https://api.idxbroker.com/clients/featured';
-
-$method = 'GET';
-
-// headers (required and optional)
-$headers = array(
-    'Content-Type: application/x-www-form-urlencoded', // required
-    'accesskey: e1Br0B5DcgaZ3@JXI9qib5', // required - replace with your own
-    'outputtype: json' // optional - overrides the preferences in our API control page
-);
-
-// set up cURL
-$handle = curl_init();
-curl_setopt($handle, CURLOPT_URL, $url);
-curl_setopt($handle, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($handle, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
-
-// exec the cURL request and returned information. Store the returned HTTP code in $code for later reference
-$response = curl_exec($handle);
-$code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-
-if ($code >= 200 || $code < 300) {
-    $response = json_decode($response, true);
-} else {
-    $error = $code;
-}
-
-// print_r($response);
-
-$keys = array_keys($response);
+$houses = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +14,7 @@ $keys = array_keys($response);
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>RE/MAX Salinas | Inventory</title>
+        <title>RE/MAX Salinas | Office Inventory</title>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
         <!-- BEGIN TEMPLATE default-css.php INCLUDE -->
@@ -80,11 +41,11 @@ $keys = array_keys($response);
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Current Inventory
+                        Office Inventory
                     </h1>
                     <ol class="breadcrumb">
                         <li>Properties</li>
-                        <li class="active"><a href="#"><i class="fa fa-archive"></i> Current Inventory</a></li>
+                        <li class="active"><a href="#"><i class="fa fa-archive"></i> Office Inventory</a></li>
                     </ol>
                 </section>
                 <!-- Main content -->
@@ -96,6 +57,7 @@ $keys = array_keys($response);
                                     <table class="table table-bordered table-striped" id="inventory-table">
                                         <thead>
                                             <tr>
+                                                <th>MLS #</th>
                                                 <th>Property</th>
                                                 <th>Bedroom</th>
                                                 <th>Bathroom</th>
@@ -105,37 +67,17 @@ $keys = array_keys($response);
                                             </tr>
                                         </thead>
                                         <?php
-                                        // foreach ($result as $house) {
-                                        for ($i = 0; $i < sizeof($keys); $i++) {
-                                            $agentName = "SELECT firstName, lastName FROM UsersInfo WHERE mlsId = :mlsId";
-                                            $namedParameters = array();
-                                            $namedParameters[':mlsId'] = $response[$keys[$i]]['listingAgentID'];
-                                            $stmt = $dbConn->prepare($agentName);
-                                            $stmt->execute($namedParameters);
-                                            $name = $stmt->fetch();
-
-                                            if (!isset($response[$keys[$i]]['bedrooms'])) {
-                                                $bedrooms = "0";
-                                            } else {
-                                                $bedrooms = $response[$keys[$i]]['bedrooms'];
+                                            foreach ($houses as $house) {
+                                                echo "<tr>";
+                                                echo "<td>" . $house['listingId'] . "</td>";
+                                                echo "<td>" . $house['address'] . "</td>";
+                                                echo "<td>" . $house['bedrooms'] . "</td>"; 
+                                                echo "<td>" . $house['bathrooms'] . "</td>"; 
+                                                echo "<td>" . '$' . number_format($house['price'], 0) . "</td>";         
+                                                echo "<td>". "</td>"; 
+                                              
+                                                echo "</tr>";
                                             }
-                                            if (!isset($response[$keys[$i]]['totalBaths'])) {
-                                                $bathrooms = "0";
-                                            } else {
-                                                $bathrooms = $response[$keys[$i]]['totalBaths'];
-                                            }
-
-                                            echo '<tbody><tr><td> ' . $name['firstName'] . " " . $name['lastName'] . '</td>
-                                                    <td> ' . $response[$keys[$i]]['address'] . " " . $response[$keys[$i]]['cityName'] . ", " . $response[$keys[$i]]['state'] . " " . $response[$keys[$i]]['zipcode'] . ' </td>
-                                                    <td>' . $bedrooms . '</td>
-                                                    <td>' . $bathrooms . '</td>
-                                                    <td>' . $response[$keys[$i]]['listingPrice'] . '</td>
-                                                    <td ><a href="viewHouseImages.php?id=' . $response[$keys[$i]]['listingID'] . '" target="_blank"><button >View</button></a></td>
-
-                                                    <td ><a href="https://maps.google.com/?q=' . $response[$keys[$i]]['address'] . " " . $response[$keys[$i]]['cityName'] . ", " . $response[$keys[$i]]['state'] . " " . $response[$keys[$i]]['zipcode'] . '" target="_blank"><button >View on Map</button></a></td>
-
-                                                </tr></tbody>';
-                                        }
                                         ?>
 
                                     </table>

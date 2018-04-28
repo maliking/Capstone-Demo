@@ -149,7 +149,7 @@ date_default_timezone_set('America/Los_Angeles');
                         </div>
                         <div class="col-xs-4">
                             <div class="box box-primary">
-                                 <div class="box-header with-border">
+                                <div class="box-header with-border">
                                     <h3 class="box-title">Property Transaction Status</h3>
                                     <div class="box-tools pull-right">
                                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -247,7 +247,7 @@ date_default_timezone_set('America/Los_Angeles');
                                 </div>
                                 <div class="box-body">
                                     <div class="chart">
-                                        <canvas id="myChart" width="400" height="300"></canvas>
+                                        <canvas id="myLineChart" width="400" height="300"></canvas>
                                     </div>
                                 </div>
                                 <!-- /.box-body -->
@@ -279,101 +279,95 @@ date_default_timezone_set('America/Los_Angeles');
 
 <script>
     $(document).ready(function () {
-        
-
-        $('#calendar').fullCalendar({
-            defaultView: 'listWeek',
-           
+    $('#calendar').fullCalendar({
+    defaultView: 'listWeek',
             defaultDate: '2018-03-12',
             navLinks: true, // can click day/week names to navigate views
 
             weekNumbers: true,
             weekNumbersWithinDays: true,
             weekNumberCalculation: 'ISO',
-
             editable: true,
             eventLimit: true, // allow "more" link when too many events
             events: [
-                {
-                    title: 'Pay Day',
+            {
+            title: 'Pay Day',
                     start: '2018-03-11',
                     end: '2018-03-13',
                     color: 'red'
-                },
-                {
-                    title: 'Staff Meeting',
+            },
+            {
+            title: 'Staff Meeting',
                     start: '2018-03-12T10:30:00',
                     end: '2018-03-12T12:30:00',
                     color: '#23b666'
-                },
-                {
-                    title: 'Call Ruth B.',
+            },
+            {
+            title: 'Call Ruth B.',
                     start: '2018-03-12T08:00:00'
-                },
-                {
-                    title: 'Call Amy R.',
+            },
+            {
+            title: 'Call Amy R.',
                     start: '2018-03-12T13:15:00'
-                },
-                {
-                    title: 'Call Quentin S.',
+            },
+            {
+            title: 'Call Quentin S.',
                     start: '2018-03-12T15:30:00'
-                },
-                {
-                    title: 'Call Rena O.',
+            },
+            {
+            title: 'Call Rena O.',
                     start: '2018-03-13T10:00:00'
-                },
-                {
-                    title: 'Call Paul E.',
+            },
+            {
+            title: 'Call Paul E.',
                     start: '2018-03-13T10:30:00'
-                },
-                {
-                    title: 'Inspection | 230 Happy St, Salinas',
+            },
+            {
+            title: 'Inspection | 230 Happy St, Salinas',
                     start: '2018-03-13T09:00:00',
                     color: '#fead14'
-                }
+            }
             ]
-        });
-
     });
-
-</script>
+    });</script>
 <script>
-    new Chart(document.getElementById("myChart"),
-        {
-            "type": "line",            
-            "data": {
-                        "labels": ["January","February","March","April","May","June","July"],
-                        "datasets": [{
+   var ctx = document.getElementById("myLineChart").getContext('2d');
+            var myChart = new Chart(ctx, {
+                "type": "line",
+
+                "data": {
+                    "labels": ["January", "February", "March", "April", "May", "June", "July"],
+                    "datasets": [{
                             "label": "2018",
-                            "data":[32834,43292,32395,49323,46953,55023,39432],
+                            "data": [32834, 43292, 32395, 49323, 46953, 55023, 39432],
                             "backgroundColor": "rgb(127, 127, 127,0.4)",
-                            "borderColor":"rgb(127, 127, 127)",
-                            "lineTension":0.1
-                        },{
+                            "borderColor": "rgb(127, 127, 127)",
+                            "lineTension": 0.1
+                        }, {
                             "label": "2017",
-                            "data":[35782,39234,30043,33944,47912,60934,30453],
-                            "fill":true,
-                            "backgroundColor":"rgb(75, 192, 192,0.4)",
-                            "borderColor":"rgb(75, 192, 192)",
-                            "lineTension":0.1
+                            "data": [35782, 39234, 30043, 33944, 47912, 60934, 30453],
+                            "fill": true,
+                            "backgroundColor": "rgb(75, 192, 192,0.4)",
+                            "borderColor": "rgb(75, 192, 192)",
+                            "lineTension": 0.1
                         }]
-                    },
-            "options":{
-               scales: {
-                   
-            yAxes: [{
-                ticks: {
-                    // Include a dollar sign in the ticks
-                    callback: function(value, index, values) {
-                        return '$' + value;
+                },
+                "options": {
+                    scales: {
+
+                        yAxes: [{
+                                ticks: {
+                                    // Include a dollar sign in the ticks
+                                    callback: function (value, index, values) {
+                                        return '$' + value;
+                                    }
+                                }
+                            }]
                     }
-                }
-            }]
-        } 
-        
-            }});
-        </script>
-        
+
+                }});
+</script>
+
 
 
 

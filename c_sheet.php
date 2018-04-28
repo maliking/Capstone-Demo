@@ -19,84 +19,6 @@
         }
 
     </style>
-
-    <script src="commAlgoJS.js?t=1500963597208"></script>
-    <script>
-        $(function () {
-            $('#today-date').datetimepicker({
-                defaultDate: new Date(),
-                format: "M/D/YYYY",
-            });
-            $('#settlement-date').datetimepicker({
-                format: "M/D/YYYY"
-
-            });
-        });
-
-        function getLicense() {
-
-            var x = document.getElementById("agentName").value;
-            document.getElementById("agent").value = x;
-
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    var data = JSON.parse(this.responseText);
-                    // alert(data.TYGross);
-                    var TYGross = data.TYGross;
-                    // alert(TYGross);
-                    if (TYGross == undefined) {
-                        document.getElementById("beg-comm").value = "0";
-                        TYGross = "";
-                    }
-                    else {
-                        document.getElementById("beg-comm").value = data.TYGross;
-                        TYGross = "";
-                    }
-
-                    $("#houseId > option").each(function() {
-                            $(this).show();
-                    });
-
-                    var agentSelectedId = $('#agentName').children(":selected").attr("id");
-                    $("#houseId > option").each(function() {
-                        if($(this).attr("id") != agentSelectedId && $(this).attr("id") != "empty")
-                        {
-                            $(this).hide();
-                        }
-                    });
-
-                    agentFeeToPay(x);
-                }
-            };
-            xhttp.open("GET", "agentCommission.php?license=" + x, true);
-            xhttp.send();
-        }
-
-        function setPercentage(commission) {
-            var housePrice = document.getElementById("housePrice").value;
-
-            document.getElementById("percentage").value = ((commission.replace(/,/g,"") / housePrice.replace(/,/g,"")) * 100) + "%";
-            document.getElementById("gross-comm").value = formatNumber(commission);
-        }
-        function addComa(number)
-        {   
-            document.getElementById("housePrice").value = formatNumber(number);
-        }
-        function getOwners() {
-
-        }
-        function agentFeeToPay(license)
-        {
-            $.post( "remaxFeeCalculation.php", { license: license })
-              .done(function( data ) {
-                var results = JSON.parse(data);
-                $('#remaxFee').val(results.fee);
-                // alert( "Fee: " + results.fee );
-              });
-            // alert(license);
-        }
-    </script>
 </head>
 
 <body class="hold-transition skin-red-light sidebar-mini">
@@ -125,7 +47,7 @@
                         </div>
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-xs-12">
+                                <div class="col-xs-10">
                                     <form action="sendCommissionSheet.php" method="post">
                                         <div class="container">
                                             <div class="row">
