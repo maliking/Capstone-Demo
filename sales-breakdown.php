@@ -73,7 +73,7 @@ $result = $stmt->fetchAll();
                                     <th>Price</th>
                                     <th>Client</th>
                                     <th data-breakpoints="all">Notes</th>
-                                    <th data-breakpoints="all">Commission Sheet</th>
+                                    <th data-breakpoints="all"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -95,43 +95,10 @@ $result = $stmt->fetchAll();
                                     echo "<td>" . '$' . number_format($sales['finalHousePrice'], 0) . "</td>"; //price
                                     echo "<td>" . $sales['clients'] . "</td>"; //listing buyer
                                     echo "<td>" .  "</td>"; //notes
-                                    echo '<td> <a href="viewCommissionSheet.php?comm=' . $sales['commId'] . '" target="_blank"> <button>View Commission Sheet</button> </a> </td>';
+                                    echo '<td> <a href="#"> <button class="btn btn-xs btn-info">View Commission Sheet</button> </a> </td>';
                                     echo "</tr>";
                                 }
                                 ?>
-
-                                <?php
-                                //                                                $dbConn = getConnection();
-                                //
-                                //                                                $sql = "SELECT status, houseId, date(dateTimes) as dateTimes, address, city, state, zip, bedrooms, bathrooms, price
-                                //                                                            FROM HouseInfo
-                                //                                                            WHERE userId = :userId
-                                //                                                            ORDER BY dateTimes ASC";
-                                //
-                                //                                                //$namedParameters = array();
-                                //                                                //$namedParameters[':userId'] = $_SESSION['userId'];
-                                //                                                //$stmt = $dbConn -> prepare($sql);
-                                //                                                /*$stmt->execute($namedParameters);
-                                //                                                //$stmt->execute();
-                                //                                                $results = $stmt->fetchAll();
-                                //
-                                //                                                foreach($results as $result){
-                                //                                                    echo "<tr>";
-                                //                                                    echo "<td>" . $result['houseId'] . "</td>";
-                                //                                                    echo "<td>" . $result['address'] . "</td>";
-                                //                                                    echo "<td>King</td>";
-                                //                                                    echo "<td>Mali</td>";
-                                //                                                    echo "<td>4083488336</td>":
-                                //                                                    echo "<td>5/6/17</td>";
-                                //                                                    echo "<td>5/9/17</td>";
-                                //                                                    echo "<td>5/12/17</td>";
-                                //                                                    echo "<td>5/12/17</td>";
-                                //                                                    echo "<td>5/12/17</td>";
-                                //                                                    echo "<td>Notes</td>";
-                                //                                                    echo "</tr>";
-                                //                                                } //closes foreach*/
-                                ?>
-
                                 </tbody>
                             </table>
                         </div>
@@ -165,9 +132,16 @@ $result = $stmt->fetchAll();
 <script src="dist/js/vendor/footable.min.js"></script>
 
 <script>
-    jQuery(function ($) {
-        $('.table').footable();
-    });
+                jQuery(function ($) {
+                $('.table').footable({
+                    "sorting": {
+                        "enabled": true
+                    },
+                    "filtering": {
+                        "enabled": true
+                    }
+                });
+            });
 </script>
 </body>
 

@@ -40,14 +40,14 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <div class="col-xs-9">
+                <div class="col-xs-12">
                     <div class="box">
                         <div class="box-header">
-                            <h4>Commission Sheet Breakdown</h4>
+                            <h4>Commission Sheet Builder</h4>
                         </div>
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-xs-10">
+                                <div class="col-xs-12">
                                     <form action="sendCommissionSheet.php" method="post">
                                         <div class="container">
                                             <div class="row">

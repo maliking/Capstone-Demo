@@ -4,6 +4,7 @@
 .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img{
     padding-left: 20px;
     padding-right: 20px;
+    margin-bottom: 20px;
 }
 a.dotted {
     color: #333333;

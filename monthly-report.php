@@ -39,9 +39,16 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-xs-4">
+                        <div class="col-xs-12 col-md-6 col-lg-4">
                             <div class="box">
-
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">YTD Commission</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
                                 <div class="box-body">
                                     <canvas id="myLineChart" width="400" height="300"></canvas>
                                 </div>
@@ -49,9 +56,16 @@
                             </div>
                             <!-- /.box -->
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-xs-12 col-md-6 col-lg-4">
                             <div class="box">
-
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">YTD Property Sales</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
                                 <div class="box-body">
                                     <canvas id="myChart" width="400" height="300"></canvas>
                                 </div>
@@ -59,9 +73,16 @@
                             </div>
                             <!-- /.box -->
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-xs-12 col-md-6 col-lg-4">
                             <div class="box">
-
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Property Transaction Status</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
                                 <div class="box-body">
                                     <canvas id="myChart" width="400" height="300"></canvas>
                                 </div>
@@ -69,6 +90,7 @@
                             </div>
                             <!-- /.box -->
                         </div>
+    
                     </div>
                     <!-- /.row -->
                 </section>
@@ -90,40 +112,42 @@
         <script>
             var ctx = document.getElementById("myChart").getContext('2d');
             var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-                    datasets: [{
-                            label: '# of Votes',
-                            data: [12, 19, 3, 5, 2, 3],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
+                "type": "bar",
+
+                "data": {
+                    "labels": ['January', 'February', 'March', 'April'],
+                    "datasets": [{
+                            label: '2016',
+                            "backgroundColor": 'rgba(121,121,121,.3)',
+                            "borderColor": 'rgba(121,121,121)',
+                            "borderWidth": 2,
+                            data: [1, 1, 1, 2]
+                        },
+                        {
+                            label: '2017',
+                            "backgroundColor": 'rgba(60,141,188,.7)',
+                            "borderColor": 'rgba(60,141,188)',
+                            "borderWidth": 2,
+                            data: [2, 2, 3, 2]
                         }]
                 },
-                options: {
+                "options": {
                     scales: {
                         yAxes: [{
                                 ticks: {
-                                    beginAtZero: true
+                                    beginAtZero: true,
+                                    max: 4,
+                                    minStepSize: 1,
+                                    stepSize: 1
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: '# of Properies Sold'
                                 }
                             }]
                     }
                 }
+
             });
 
 
@@ -132,20 +156,19 @@
                 "type": "line",
 
                 "data": {
-                    "labels": ["January", "February", "March", "April", "May", "June", "July"],
+                    "labels": ["January", "February", "March", "April"],
                     "datasets": [{
+                            //blue
                             "label": "2018",
-                            "data": [32834, 43292, 32395, 49323, 46953, 55023, 39432],
-                            "backgroundColor": "rgb(127, 127, 127,0.4)",
-                            "borderColor": "rgb(127, 127, 127)",
-                            "lineTension": 0.1
+                            "data": [38524, 42943, 31934, 38543],
+                            "fill": false,
+                            "borderColor": "rgb(75, 192, 192, 0.8)"
                         }, {
+                            //grey
                             "label": "2017",
-                            "data": [35782, 39234, 30043, 33944, 47912, 60934, 30453],
-                            "fill": true,
-                            "backgroundColor": "rgb(75, 192, 192,0.4)",
-                            "borderColor": "rgb(75, 192, 192)",
-                            "lineTension": 0.1
+                            "data": [35782, 39234, 30043, 33944, 47912],
+                            "fill": false,
+                            "borderColor": "rgb(127, 127, 127, 0.4)"
                         }]
                 },
                 "options": {
@@ -162,6 +185,28 @@
                     }
 
                 }});
+
+            var ctx = document.getElementById("salesChart").getContext('2d');
+            var myChart = new Chart(ctx, {
+                "type": "line",
+                "data": {
+                    "labels": ["January", "February", "March", "April"],
+                    "datasets": [{
+                            //blue
+                            "label": "2018",
+                            "data": [38524, 42943, 31934, 38543],
+                            "fill": false,
+                            "borderColor": "rgb(75, 192, 192, 0.8)"
+                        }, {
+                            //grey
+                            "label": "2017",
+                            "data": [35782, 39234, 30043, 33944, 47912],
+                            "fill": false,
+                            "borderColor": "rgb(127, 127, 127, 0.4)"
+                        }]
+                }
+            });
+
         </script>
 
     </body>

@@ -12,7 +12,12 @@
         <!-- PAGE-SPECIFIC CSS -->
         <link rel="stylesheet" href="./dist/css/vendor/footable.bootstrap.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+        <style>
+            h5 > a {
+                color: white;
+                text-decoration: underline;
+            }
+        </style>
 
     </head>
 
@@ -31,12 +36,9 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Agent Roster
+                        Agent Roster <button class="btn btn-instagram pull-right"><i class="fa fa-user-plus"></i> Add a New Agent</button>
                     </h1>
-                    <ol class="breadcrumb">
-                        <li>Properties</li>
-                        <li class="active"><a href="#"><i class="fa fa-archive"></i> Current Inventory</a></li>
-                    </ol>
+
                 </section>
                 <!-- Main content -->
                 <section class="content">
@@ -51,14 +53,13 @@
                                     </div>
                                     <!-- /.widget-user-image -->
                                     <h3 class="widget-user-username">Macy Rita</h3>
-                                    <h5 class="widget-user-desc">000-000-0000<br>macy@demo.com</h5>
+                                    <h5 class="widget-user-desc">000-000-0000<br><a href="#">macy@demo.com</a></h5>
                                 </div>
                                 <div class="box-footer no-padding">
                                     <ul class="nav nav-stacked">
-                                        <li><a href="#">Projects <span class="pull-right badge bg-blue">31</span></a></li>
-                                        <li><a href="#">Tasks <span class="pull-right badge bg-aqua">5</span></a></li>
-                                        <li><a href="#">Completed Projects <span class="pull-right badge bg-green">12</span></a></li>
-                                        <li><a href="#">Followers <span class="pull-right badge bg-red">842</span></a></li>
+                                        <li><a data-toggle="modal" href="#active-modal">Active Properties <span class="pull-right badge bg-green">4</span></a></li>
+                                        <li><a data-toggle="modal" href="#sold-modal">Sold Properties <span class="pull-right badge bg-default">7</span></a></li>
+                                        <li><a data-toggle="modal" href="#profile-modal">View Full Profile <span class="pull-right"><i class="fa fa-angle-right"></i></span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -75,14 +76,13 @@
                                     </div>
                                     <!-- /.widget-user-image -->
                                     <h3 class="widget-user-username">Luke Fuhrman</h3>
-                                    <h5 class="widget-user-desc">000-000-0000<br>luke@demo.com</h5>
+                                    <h5 class="widget-user-desc">000-000-0000<br><a href="#">luke@demo.com</a></h5>
                                 </div>
                                 <div class="box-footer no-padding">
                                     <ul class="nav nav-stacked">
-                                        <li><a href="#">Projects <span class="pull-right badge bg-blue">31</span></a></li>
-                                        <li><a href="#">Tasks <span class="pull-right badge bg-aqua">5</span></a></li>
-                                        <li><a href="#">Completed Projects <span class="pull-right badge bg-green">12</span></a></li>
-                                        <li><a href="#">Followers <span class="pull-right badge bg-red">842</span></a></li>
+                                        <li><a data-toggle="modal" href="#active-modal">Active Properties <span class="pull-right badge bg-green">4</span></a></li>
+                                        <li><a data-toggle="modal" href="#sold-modal">Sold Properties <span class="pull-right badge bg-default">7</span></a></li>
+                                        <li><a data-toggle="modal" href="#profile-modal">View Full Profile <span class="pull-right"><i class="fa fa-angle-right"></i></span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -99,14 +99,13 @@
                                     </div>
                                     <!-- /.widget-user-image -->
                                     <h3 class="widget-user-username">Elodia Weisz</h3>
-                                    <h5 class="widget-user-desc">000-000-0000<br>elodia@demo.com</h5>
+                                    <h5 class="widget-user-desc">000-000-0000<br><a href="#">elodia@demo.com</a></h5>
                                 </div>
                                 <div class="box-footer no-padding">
                                     <ul class="nav nav-stacked">
-                                        <li><a href="#">Projects <span class="pull-right badge bg-blue">31</span></a></li>
-                                        <li><a href="#">Tasks <span class="pull-right badge bg-aqua">5</span></a></li>
-                                        <li><a href="#">Completed Projects <span class="pull-right badge bg-green">12</span></a></li>
-                                        <li><a href="#">Followers <span class="pull-right badge bg-red">842</span></a></li>
+                                        <li><a data-toggle="modal" href="#active-modal">Active Properties <span class="pull-right badge bg-green">4</span></a></li>
+                                        <li><a data-toggle="modal" href="#sold-modal">Sold Properties <span class="pull-right badge bg-default">7</span></a></li>
+                                        <li><a data-toggle="modal" href="#profile-modal">View Full Profile <span class="pull-right"><i class="fa fa-angle-right"></i></span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -123,14 +122,13 @@
                                     </div>
                                     <!-- /.widget-user-image -->
                                     <h3 class="widget-user-username">Raeann Haner</h3>
-                                    <h5 class="widget-user-desc">000-000-0000<br>raeann@demo.com</h5>
+                                    <h5 class="widget-user-desc">000-000-0000<br><a href="#">raeann@demo.com</a></h5>
                                 </div>
                                 <div class="box-footer no-padding">
                                     <ul class="nav nav-stacked">
-                                        <li><a href="#">Projects <span class="pull-right badge bg-blue">31</span></a></li>
-                                        <li><a href="#">Tasks <span class="pull-right badge bg-aqua">5</span></a></li>
-                                        <li><a href="#">Completed Projects <span class="pull-right badge bg-green">12</span></a></li>
-                                        <li><a href="#">Followers <span class="pull-right badge bg-red">842</span></a></li>
+                                        <li><a data-toggle="modal" href="#active-modal">Active Properties <span class="pull-right badge bg-green">4</span></a></li>
+                                        <li><a data-toggle="modal" href="#sold-modal">Sold Properties <span class="pull-right badge bg-default">7</span></a></li>
+                                        <li><a data-toggle="modal" href="#profile-modal">View Full Profile <span class="pull-right"><i class="fa fa-angle-right"></i></span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -149,14 +147,13 @@
                                     </div>
                                     <!-- /.widget-user-image -->
                                     <h3 class="widget-user-username">Jack Landa</h3>
-                                    <h5 class="widget-user-desc">000-000-0000<br>jack@demo.com</h5>
+                                    <h5 class="widget-user-desc">000-000-0000<br><a href="#">jack@demo.com</a></h5>
                                 </div>
                                 <div class="box-footer no-padding">
                                     <ul class="nav nav-stacked">
-                                        <li><a href="#">Projects <span class="pull-right badge bg-blue">31</span></a></li>
-                                        <li><a href="#">Tasks <span class="pull-right badge bg-aqua">5</span></a></li>
-                                        <li><a href="#">Completed Projects <span class="pull-right badge bg-green">12</span></a></li>
-                                        <li><a href="#">Followers <span class="pull-right badge bg-red">842</span></a></li>
+                                        <li><a data-toggle="modal" href="#active-modal">Active Properties <span class="pull-right badge bg-green">4</span></a></li>
+                                        <li><a data-toggle="modal" href="#sold-modal">Sold Properties <span class="pull-right badge bg-default">7</span></a></li>
+                                        <li><a data-toggle="modal" href="#profile-modal">View Full Profile <span class="pull-right"><i class="fa fa-angle-right"></i></span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -173,14 +170,13 @@
                                     </div>
                                     <!-- /.widget-user-image -->
                                     <h3 class="widget-user-username">Scott Bittinger</h3>
-                                    <h5 class="widget-user-desc">000-000-0000<br>scott@demo.com</h5>
+                                    <h5 class="widget-user-desc">000-000-0000<br><a href="#">scott@demo.com</a></h5>
                                 </div>
                                 <div class="box-footer no-padding">
                                     <ul class="nav nav-stacked">
-                                        <li><a href="#">Projects <span class="pull-right badge bg-blue">31</span></a></li>
-                                        <li><a href="#">Tasks <span class="pull-right badge bg-aqua">5</span></a></li>
-                                        <li><a href="#">Completed Projects <span class="pull-right badge bg-green">12</span></a></li>
-                                        <li><a href="#">Followers <span class="pull-right badge bg-red">842</span></a></li>
+                                        <li><a data-toggle="modal" href="#active-modal">Active Properties <span class="pull-right badge bg-green">4</span></a></li>
+                                        <li><a data-toggle="modal" href="#sold-modal">Sold Properties <span class="pull-right badge bg-default">7</span></a></li>
+                                        <li><a data-toggle="modal" href="#profile-modal">View Full Profile <span class="pull-right"><i class="fa fa-angle-right"></i></span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -197,14 +193,13 @@
                                     </div>
                                     <!-- /.widget-user-image -->
                                     <h3 class="widget-user-username">Lorrie Jackson</h3>
-                                    <h5 class="widget-user-desc">000-000-0000<br>lorrie@demo.com</h5>
+                                    <h5 class="widget-user-desc">000-000-0000<br><a href="#">lorrie@demo.com</a></h5>
                                 </div>
                                 <div class="box-footer no-padding"> 
                                     <ul class="nav nav-stacked">
-                                        <li><a href="#">Projects <span class="pull-right badge bg-blue">31</span></a></li>
-                                        <li><a href="#">Tasks <span class="pull-right badge bg-aqua">5</span></a></li>
-                                        <li><a href="#">Completed Projects <span class="pull-right badge bg-green">12</span></a></li>
-                                        <li><a href="#">Followers <span class="pull-right badge bg-red">842</span></a></li>
+                                        <li><a data-toggle="modal" href="#active-modal">Active Properties <span class="pull-right badge bg-green">4</span></a></li>
+                                        <li><a data-toggle="modal" href="#sold-modal">Sold Properties <span class="pull-right badge bg-default">7</span></a></li>
+                                        <li><a data-toggle="modal" href="#profile-modal">View Full Profile <span class="pull-right"><i class="fa fa-angle-right"></i></span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -221,207 +216,200 @@
                                     </div>
                                     <!-- /.widget-user-image -->
                                     <h3 class="widget-user-username">Nick Depers</h3>
-                                    <h5 class="widget-user-desc">000-000-0000<br>nick@demo.com</h5>
+                                    <h5 class="widget-user-desc">000-000-0000<br><a href="#">nick@demo.com</a></h5>
                                 </div>
                                 <div class="box-footer no-padding">
                                     <ul class="nav nav-stacked">
-                                        <li><a href="#">Projects <span class="pull-right badge bg-blue">31</span></a></li>
-                                        <li><a href="#">Tasks <span class="pull-right badge bg-aqua">5</span></a></li>
-                                        <li><a href="#">Completed Projects <span class="pull-right badge bg-green">12</span></a></li>
-                                        <li><a href="#">Followers <span class="pull-right badge bg-red">842</span></a></li>
+                                        <li><a data-toggle="modal" href="#active-modal">Active Properties <span class="pull-right badge bg-green">4</span></a></li>
+                                        <li><a data-toggle="modal" href="#sold-modal">Sold Properties <span class="pull-right badge bg-default">7</span></a></li>
+                                        <li><a data-toggle="modal" href="#profile-modal">View Full Profile <span class="pull-right"><i class="fa fa-angle-right"></i></span></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <!-- /.widget-user -->
                         </div>
                         <!-- /.col -->
-                    </div>
-                    <div class="row">
+                        <div class="col-md-12">
 
-                        <div class="col-xs-12">
-                            <div class="box">
-                                <div class="box-body no-padding">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th data-breakpoints="xs">ID</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr data-expanded="true">
-                                                <td>1</td>
-                                                <td>Dennise</td>
-                                                <td>Fuhrman</td>
-                                                <td>dennise@demo.com</td>
-                                                <td>000-000-0000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Elodia</td>
-                                                <td>Weisz</td>
-                                                <td>elodia@demo.com</td>
-                                                <td>000-000-0000</td>     
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Raeann</td>
-                                                <td>Haner</td>
-                                                <td>raeann@demo.com</td>
-                                                <td>000-000-0000</td>     
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Junie</td>
-                                                <td>Landa</td>
-                                                <td>junie@demo.com</td>
-                                                <td>000-000-0000</td>     
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Solomon</td>
-                                                <td>Bittinger</td>
-                                                <td>solomon@demo.com</td>
-                                                <td>000-000-0000</td>     
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Bar</td>
-                                                <td>Lewis</td>
-                                                <td>bar@demo.com</td>
-                                                <td>000-000-0000</td>     
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>Usha</td>
-                                                <td>Leak</td>
-                                                <td>usha@demo.com</td>
-                                                <td>000-000-0000</td>     
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>Lorriane</td>
-                                                <td>Cooke</td>
-                                                <td>lorriane@demo.com</td>
-                                                <td>000-000-0000</td>     
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- /.box-body -->
-                            </div>
-                            <!-- /.box -->
                         </div>
-                        <!-- /.col -->
                     </div>
-                    <!-- /.row -->
+
+
                 </section>
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
         </div>
         <!-- /.wrapper -->
-        <div class="modal fade" id="editor-modal" tabindex="-1" role="dialog" aria-labelledby="editor-title">
-            <style scoped>
-                /* provides a red astrix to denote required fields - this should be included in common stylesheet */
-                .form-group.required .control-label:after {
-                    content: "*";
-                    color: red;
-                    margin-left: 4px;
-                }
-            </style>
-            <div class="modal-dialog" role="document">
-                <form class="modal-content form-horizontal" id="editor" action="agent-roster.php" method="get">
+
+
+        <div class="modal modal-default fade" id="active-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">×</span></button>
-                        <h4 class="modal-title" id="editor-title">Add A New Agent</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Active Properties</h4>
                     </div>
                     <div class="modal-body">
-                        <input type="number" id="id" name="id" class="hidden"/>
-                        <input type="hidden" id="userId" name="id" class="hidden"/>
-
-                        <div class="form-group required">
-                            <label for="license" class="col-sm-3 control-label">License</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="license" name="license" placeholder=""
-                                       onchange="getLicense()" required>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th style="width: 10px">MLS #</th>
+                                        <th>Address</th>
+                                        <th>Sale Status</th>
+                                        <th style="width: 40px">%</th>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ML83424843</a></td>
+                                        <td>71 Pilgrim Ave, Salinas CA</td>
+                                        <td>
+                                            <div class="progress progress-xs progress-striped active">
+                                                <div class="progress-bar progress-bar-danger" style="width: 23%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-red">23%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ML81923843</a></td>
+                                        <td>1084 Minners Rd, Salinas CA</td>
+                                        <td>
+                                            <div class="progress progress-xs progress-striped active">
+                                                <div class="progress-bar progress-bar-yellow" style="width: 34%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-yellow">34%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ML81834075</a></td>
+                                        <td>5934 Stanford Dr, Salinas CA</td>
+                                        <td>
+                                            <div class="progress progress-xs progress-striped active">
+                                                <div class="progress-bar progress-bar-yellow" style="width: 40%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-yellow">40%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ML81954235</a></td>
+                                        <td>3 Elm St, Salinas CA</td>
+                                        <td>
+                                            <div class="progress progress-xs progress-striped active">
+                                                <div class="progress-bar progress-bar-info" style="width: 90%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-aqua">90%</span></td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="firstName" class="col-sm-3 control-label">First Name</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name"
-                                       required readonly>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName" class="col-sm-3 control-label">Last Name</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name"
-                                       required readonly>
-                            </div>
-                        </div>
-
-                        <div class="form-group required">
-                            <label for="firstName" class="col-sm-3 control-label">Username</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Username"
-                                       required>
-                            </div>
-                        </div>
-
-                        <div class="form-group required">
-                            <label for="firstName" class="col-sm-3 control-label">Password</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="password" name="password" placeholder="Password"
-                                       required>
-                            </div>
-                        </div>
-
-                        <div class="form-group required">
-                            <label for="firstName" class="col-sm-3 control-label">Email</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone" class="col-sm-3 control-label">Phone Number</label>
-                            <div class="col-sm-9">
-                                <input type="number" class="form-control" id="phone" name="phone" placeholder="XXX-XXX-XXXX">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone" class="col-sm-3 control-label">Issued License Date</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="issuedDate" name="issuedDate" placeholder=""
-                                       readonly>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone" class="col-sm-3 control-label">License Expiration Date</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="expirationDate" name="expirationDate" placeholder=""
-                                       readonly>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <input type="submit" class="btn btn-primary" value="Save changes">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div>
-                </form>
+                    </div>        
+                </div>
+                <!-- /.modal-content -->
             </div>
+            <!-- /.modal-dialog -->
         </div>
+        <!-- /.modal -->
 
+        <div class="modal modal-default fade" id="sold-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Sold Properties</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th style="width: 10px">MLS #</th>
+                                        <th>Address</th>
+                                        <th style="width: 120px">Settlement Date</th>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ML83424843</a></td>
+                                        <td>4239 Lovers Ave, Salinas CA</td>
+                                        <td>11/12/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ML83424843</a></td>
+                                        <td>43 Qualm Ave, Salinas CA</td>
+                                        <td>10/10/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ML83424843</a></td>
+                                        <td>549 Regimen Ave, Salinas CA</td>
+                                        <td>10/20/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ML85346354</a></td>
+                                        <td>5649 Wendy St, Salinas CA</td>
+                                        <td>9/20/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ML81234843</a></td>
+                                        <td>540 Ronald Dr, Salinas CA</td>
+                                        <td>9/13/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ML84534643</a></td>
+                                        <td>76 McDonald St, Salinas CA</td>
+                                        <td>8/01/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">ML83424843</a></td>
+                                        <td>5 Fort Dr, Salinas CA</td>
+                                        <td>7/24/2017</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <div class="modal fade" id="profile-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Agent Profile Demo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12"><img width="100px" style="margin-left: auto; margin-right: auto; display: block" class="img-circle" src="dist/img/avatar5.png" alt="User Avatar"></div>
+                            <!-- Input addon -->
+                            <div class="box-header with-border">
+                                <h3 class="box-title"></h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-phone"></i></span>
+                                    <input type="text" class="form-control" placeholder="000-000-0000" disabled>
+                                </div>
+                                <br>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-envelope"></i></span>
+                                    <input type="text" class="form-control" placeholder="fake@demo.com" disabled>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>        
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
 
         <!-- BEGIN TEMPLATE default-footer.php INCLUDE -->
         <?php include "./templates-admin/default-footer.php" ?>
@@ -435,9 +423,9 @@
         <script src="./dist/js/vendor/footable.min.js"></script>
 
         <script>
-                                           jQuery(function ($) {
-                                               $('.table').footable();
-                                           });
+            jQuery(function ($) {
+                $('.table').footable();
+            });
         </script>
     </body>
 

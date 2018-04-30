@@ -13,7 +13,8 @@
             <li class="<?= ($activePage == 'agent-roster') ? 'active':''; ?>"><a href="agent-roster.php"><i class="fa fa-users"></i> <span>Agent Roster</span></a></li>
             <li class="<?= ($activePage == 'calendar') ? 'active':''; ?>"><a href="calendar.php"><i class="fa fa-calendar"></i> <span>Calendar</span></a></li>
             <li class="header">PROPERTIES</li>
-            <li class="<?= ($activePage == 'inventory') ? 'active':''; ?>"><a href="inventory.php"><i class="fa fa-home"></i> <span>Office Inventory</span></a></li>
+            <li class="<?= ($activePage == 'my-inventory') ? 'active':''; ?>"><a href="my-inventory.php"><i class="fa fa-home"></i> <span>My Inventory</span></a></li>
+            <li class="<?= ($activePage == 'inventory') ? 'active':''; ?>"><a href="inventory.php"><i class="fa fa-building"></i> <span>Office Inventory</span></a></li>
             <li class="header">TRANSACTIONS</li>
             <li class="<?= ($activePage == 'sales-breakdown') ? 'active':''; ?>"><a href="sales-breakdown.php"><i class="fa fa-list-alt"></i> <span> Sales Breakdown</span></a></li>
             <li class="<?= ($activePage == 'monthly-report') ? 'active':''; ?>"><a href="monthly-report.php"><i class="fa fa-line-chart"></i> <span>Monthly Report</span></a></li>

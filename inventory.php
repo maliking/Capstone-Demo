@@ -62,20 +62,18 @@ $houses = $stmt->fetchAll();
                                                 <th>Bedroom</th>
                                                 <th>Bathroom</th>
                                                 <th>Price</th>
-                                                <th>House Images</th>
-                                                <th>Map</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <?php
                                             foreach ($houses as $house) {
                                                 echo "<tr>";
-                                                echo "<td>" . $house['listingId'] . "</td>";
+                                                echo "<td><a href='#'>" . $house['listingId'] . "</a></td>";
                                                 echo "<td>" . $house['address'] . "</td>";
                                                 echo "<td>" . $house['bedrooms'] . "</td>"; 
                                                 echo "<td>" . $house['bathrooms'] . "</td>"; 
                                                 echo "<td>" . '$' . number_format($house['price'], 0) . "</td>";         
-                                                echo "<td>". "</td>"; 
-                                              
+                                                echo "<td>" . "<a style='margin-right: 10px' href='#'><i class='fa fa-image'></i></a> <a href='#'><i class='fa fa-map-marker'></i></a>" . "</td>";                         
                                                 echo "</tr>";
                                             }
                                         ?>
@@ -108,7 +106,14 @@ $houses = $stmt->fetchAll();
         <script>
 
             jQuery(function ($) {
-                $('.table').footable();
+                $('.table').footable({
+                    "sorting": {
+                        "enabled": true
+                    },
+                    "filtering": {
+                        "enabled": true
+                    }
+                });
             });
 
         </script>
